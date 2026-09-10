@@ -1,0 +1,14 @@
+[
+  { "word1": "Chien", "word2": "Loup", "category": "animals", "difficulty": "easy" },
+  { "word1": "Chat", "word2": "Tigre", "category": "animals", "difficulty": "easy" },
+  { "word1": "Aigle", "word2": "Faucon", "category": "animals", "difficulty": "medium" },
+  { "word1": "Pieuvre", "word2": "Calamar", "category": "animals", "difficulty": "medium" },
+  { "word1": "Cigogne", "word2": "Héron", "category": "animals", "difficulty": "hard" },
+  { "word1": "Grenouille", "word2": "Crapaud", "category": "animals", "difficulty": "hard" },
+  { "word1": "Croissant", "word2": "Pain au chocolat", "category": "food", "difficulty": "easy" },
+  { "word1": "Crêpe", "word2": "Gaufre", "category": "food", "difficulty": "easy" },
+  { "word1": "Raclette", "word2": "Fondue", "category": "food", "difficulty": "medium" },
+  { "word1": "Macaron", "word2": "Meringue", "category": "food", "difficulty": "medium" },
+  { "word1": "Camembert", "word2": "Brie", "category": "food", "difficulty": "hard" },
+  { "word1": "Éclair", "word2": "Religieuse", "category": "food", "difficulty": "hard" }
+]

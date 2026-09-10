@@ -1,0 +1,146 @@
+[
+  {
+    "id": "GB-0",
+    "name": "Gianluigi Buffon",
+    "position": "GB",
+    "photoUrl": null
+  },
+  {
+    "id": "GB-1",
+    "name": "Iker Casillas",
+    "position": "GB",
+    "photoUrl": null
+  },
+  {
+    "id": "GB-2",
+    "name": "Petr Čech",
+    "position": "GB",
+    "photoUrl": null
+  },
+  {
+    "id": "GB-3",
+    "name": "Edwin van der Sar",
+    "position": "GB",
+    "photoUrl": null
+  },
+  {
+    "id": "GB-4",
+    "name": "Oliver Kahn",
+    "position": "GB",
+    "photoUrl": null
+  },
+  {
+    "id": "GB-5",
+    "name": "Fabien Barthez",
+    "position": "GB",
+    "photoUrl": null
+  },
+  {
+    "id": "DC-0",
+    "name": "Paolo Maldini",
+    "position": "DC",
+    "photoUrl": null
+  },
+  {
+    "id": "DC-1",
+    "name": "Alessandro Nesta",
+    "position": "DC",
+    "photoUrl": null
+  },
+  {
+    "id": "DC-2",
+    "name": "Carles Puyol",
+    "position": "DC",
+    "photoUrl": null
+  },
+  {
+    "id": "DC-3",
+    "name": "Fabio Cannavaro",
+    "position": "DC",
+    "photoUrl": null
+  },
+  {
+    "id": "DC-4",
+    "name": "Rio Ferdinand",
+    "position": "DC",
+    "photoUrl": null
+  },
+  {
+    "id": "DC-5",
+    "name": "Lilian Thuram",
+    "position": "DC",
+    "photoUrl": null
+  },
+  {
+    "id": "MC-0",
+    "name": "Zinédine Zidane",
+    "position": "MC",
+    "photoUrl": null
+  },
+  {
+    "id": "MC-1",
+    "name": "Xavi",
+    "position": "MC",
+    "photoUrl": null
+  },
+  {
+    "id": "MC-2",
+    "name": "Andrés Iniesta",
+    "position": "MC",
+    "photoUrl": null
+  },
+  {
+    "id": "MC-3",
+    "name": "Andrea Pirlo",
+    "position": "MC",
+    "photoUrl": null
+  },
+  {
+    "id": "MC-4",
+    "name": "Steven Gerrard",
+    "position": "MC",
+    "photoUrl": null
+  },
+  {
+    "id": "MC-5",
+    "name": "Frank Lampard",
+    "position": "MC",
+    "photoUrl": null
+  },
+  {
+    "id": "ATT-0",
+    "name": "Thierry Henry",
+    "position": "ATT",
+    "photoUrl": null
+  },
+  {
+    "id": "ATT-1",
+    "name": "Ronaldo",
+    "position": "ATT",
+    "photoUrl": null
+  },
+  {
+    "id": "ATT-2",
+    "name": "Didier Drogba",
+    "position": "ATT",
+    "photoUrl": null
+  },
+  {
+    "id": "ATT-3",
+    "name": "Samuel Eto’o",
+    "position": "ATT",
+    "photoUrl": null
+  },
+  {
+    "id": "ATT-4",
+    "name": "David Villa",
+    "position": "ATT",
+    "photoUrl": null
+  },
+  {
+    "id": "ATT-5",
+    "name": "Dennis Bergkamp",
+    "position": "ATT",
+    "photoUrl": null
+  }
+]
