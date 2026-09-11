@@ -1,0 +1,2034 @@
+[
+  {
+    "id": "anime-001",
+    "word1": "Law",
+    "word2": "Chirurgien",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Opération, précision, découpe.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-002",
+    "word1": "Nico Robin",
+    "word2": "Main",
+    "crossover": false,
+    "types": [
+      "character",
+      "body-part"
+    ],
+    "link": "Doigts, saisir, membres.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-003",
+    "word1": "Luffy",
+    "word2": "Élastique",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Étirement, souplesse, tension.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-004",
+    "word1": "Zoro",
+    "word2": "Boussole",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Direction, trajet, se perdre : association par contraste.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-005",
+    "word1": "Sanji",
+    "word2": "Serveur",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Restaurant, service, costume.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-006",
+    "word1": "Brook",
+    "word2": "Squelette",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Os, corps, mort.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-007",
+    "word1": "Franky",
+    "word2": "Garage",
+    "crossover": false,
+    "types": [
+      "character",
+      "place"
+    ],
+    "link": "Mécanique, réparation, métal.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-008",
+    "word1": "Chopper",
+    "word2": "Médecin",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Soins, remèdes, diagnostic.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-009",
+    "word1": "Nami",
+    "word2": "Météorologue",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Climat, prévisions, nuages.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-010",
+    "word1": "Usopp",
+    "word2": "Pinocchio",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Mensonges, nez, histoires.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-011",
+    "word1": "Law",
+    "word2": "Chopper",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Médecine, soins, équipage.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-012",
+    "word1": "Zoro",
+    "word2": "Sanji",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Combat, rivalité, équipage.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-013",
+    "word1": "Luffy",
+    "word2": "Ace",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Fraternité, liberté, pirates.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-014",
+    "word1": "Nami",
+    "word2": "Nico Robin",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Équipage, voyage, connaissances.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-015",
+    "word1": "Shanks",
+    "word2": "Mihawk",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Lame, duel, puissance.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-016",
+    "word1": "Ace",
+    "word2": "Bougie",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Flamme, chaleur, extinction.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-017",
+    "word1": "Crocodile",
+    "word2": "Sablier",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Sable, grains, écoulement.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-018",
+    "word1": "Doflamingo",
+    "word2": "Marionnettiste",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Fils, contrôle, manipulation.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-019",
+    "word1": "Brook",
+    "word2": "Diapason",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Musique, vibration, son.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-020",
+    "word1": "Sanji",
+    "word2": "Zeff",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Cuisine, transmission, jambe.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-021",
+    "word1": "Shikamaru",
+    "word2": "Joueur d’échecs",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Stratégie, anticipation, sacrifice.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-022",
+    "word1": "Gaara",
+    "word2": "Sablier",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Sable, grains, écoulement.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-023",
+    "word1": "Kakashi",
+    "word2": "Photocopieuse",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Copie, reproduction, modèle.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-024",
+    "word1": "Rock Lee",
+    "word2": "Haltère",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Poids, muscles, entraînement.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-025",
+    "word1": "Orochimaru",
+    "word2": "Serpent",
+    "crossover": false,
+    "types": [
+      "character",
+      "animal"
+    ],
+    "link": "Mue, peau, reptile.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-026",
+    "word1": "Naruto",
+    "word2": "Sasuke",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Rivalité, village, progression.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-027",
+    "word1": "Kakashi",
+    "word2": "Itachi",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Œil, illusion, technique.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-028",
+    "word1": "Sakura",
+    "word2": "Tsunade",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Soins, force, transmission.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-029",
+    "word1": "Rock Lee",
+    "word2": "Gaï",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Entraînement, effort, tenue verte.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-030",
+    "word1": "Shikamaru",
+    "word2": "Shikaku",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Stratégie, ombre, famille.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-031",
+    "word1": "Naruto",
+    "word2": "Photocopieuse",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Copies, multiplication, original.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-032",
+    "word1": "Itachi",
+    "word2": "Corbeau",
+    "crossover": false,
+    "types": [
+      "character",
+      "animal"
+    ],
+    "link": "Noir, regard, apparition.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-033",
+    "word1": "Jiraya",
+    "word2": "Écrivain",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Livre, inspiration, récit.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-034",
+    "word1": "Hinata",
+    "word2": "Neji",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Famille, regard, précision.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-035",
+    "word1": "Minato",
+    "word2": "Éclair",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Vitesse, lumière, apparition soudaine.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-036",
+    "word1": "Goku",
+    "word2": "Buffet à volonté",
+    "crossover": false,
+    "types": [
+      "character",
+      "place"
+    ],
+    "link": "Appétit, énergie, quantité.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-037",
+    "word1": "Vegeta",
+    "word2": "Prince charmant",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Prince, royauté, fierté.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-038",
+    "word1": "Trunks",
+    "word2": "Machine à remonter le temps",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Futur, voyage, changement.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-039",
+    "word1": "Majin Buu",
+    "word2": "Barbapapa",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Rose, transformation, souplesse.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball",
+      "barbapapa"
+    ]
+  },
+  {
+    "id": "anime-040",
+    "word1": "Goku",
+    "word2": "Vegeta",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Rivalité, entraînement, transformation.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-041",
+    "word1": "Gohan",
+    "word2": "Goten",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Famille, enfance, potentiel.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-042",
+    "word1": "Freezer",
+    "word2": "Cell",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Transformation, menace, puissance.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-043",
+    "word1": "Piccolo",
+    "word2": "Antenne",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Tête, appendice, réception : lien visuel.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-044",
+    "word1": "Bulma",
+    "word2": "Inventeur",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Machine, recherche, technologie.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-045",
+    "word1": "Shenron",
+    "word2": "Génie de la lampe",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Invocation, souhait, magie.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-046",
+    "word1": "Krillin",
+    "word2": "Tortue Géniale",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "École, entraînement, tête chauve.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-047",
+    "word1": "Vegeta",
+    "word2": "Couronne",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Prince, héritage, autorité.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-048",
+    "word1": "Goku",
+    "word2": "Singe",
+    "crossover": false,
+    "types": [
+      "character",
+      "animal"
+    ],
+    "link": "Queue, transformation, animal.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-049",
+    "word1": "Piccolo",
+    "word2": "Gohan",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Entraînement, protection, transmission.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-050",
+    "word1": "Freezer",
+    "word2": "Congélateur",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Froid évoqué par le nom, glace, conservation.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball"
+    ]
+  },
+  {
+    "id": "anime-051",
+    "word1": "Ronflex",
+    "word2": "Sieste",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Sommeil, repos, fatigue.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-052",
+    "word1": "Métamorph",
+    "word2": "Pâte à modeler",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Forme, souplesse, transformation.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-053",
+    "word1": "Psykokwak",
+    "word2": "Migraine",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Tête, douleur, confusion.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-054",
+    "word1": "Rondoudou",
+    "word2": "Berceuse",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Chant, sommeil, douceur.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-055",
+    "word1": "Miaouss",
+    "word2": "Tirelire",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Pièce, argent, richesse.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-056",
+    "word1": "Pikachu",
+    "word2": "Pile",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Électricité, énergie, charge.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-057",
+    "word1": "Salamèche",
+    "word2": "Bougie",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Flamme, chaleur, extinction.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-058",
+    "word1": "Carapuce",
+    "word2": "Tortue",
+    "crossover": false,
+    "types": [
+      "character",
+      "animal"
+    ],
+    "link": "Carapace, eau, animal.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-059",
+    "word1": "Bulbizarre",
+    "word2": "Jardinier",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Plante, croissance, nature.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-060",
+    "word1": "Pikachu",
+    "word2": "Raichu",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Électricité, évolution, queue.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-061",
+    "word1": "Dracaufeu",
+    "word2": "Dracolosse",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Ailes, vol, silhouette de dragon.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-062",
+    "word1": "Mew",
+    "word2": "Mewtwo",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Origine, pouvoirs, expérience.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-063",
+    "word1": "Ectoplasma",
+    "word2": "Fantôme",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Nuit, ombre, apparition.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-064",
+    "word1": "Rondoudou",
+    "word2": "Chanteur",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Voix, scène, public.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-065",
+    "word1": "Ronflex",
+    "word2": "Paresseux",
+    "crossover": false,
+    "types": [
+      "character",
+      "animal"
+    ],
+    "link": "Sommeil, lenteur, repos.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-066",
+    "word1": "Light",
+    "word2": "Lumière",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Traduction du prénom, ombre, éclairer.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-067",
+    "word1": "Light",
+    "word2": "L",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Enquête, secret, duel intellectuel.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-068",
+    "word1": "Ryuk",
+    "word2": "Pomme",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Fruit, tentation, faim.",
+    "themes": [
+      "anime",
+      "food"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-069",
+    "word1": "L",
+    "word2": "Détective",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Déduction, enquête, indices.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-070",
+    "word1": "Light",
+    "word2": "Juge",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Justice, condamnation, décision.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-071",
+    "word1": "Ryuk",
+    "word2": "Rem",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Mort, carnet, observation.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-072",
+    "word1": "Misa",
+    "word2": "Actrice",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Caméra, rôle, célébrité.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-073",
+    "word1": "Near",
+    "word2": "Mello",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Succession, enquête, rivalité.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-074",
+    "word1": "L",
+    "word2": "Insomniaque",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Nuit, fatigue, veille.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-075",
+    "word1": "Light",
+    "word2": "Misa",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Secret, carnet, double vie.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note"
+    ]
+  },
+  {
+    "id": "anime-076",
+    "word1": "Saitama",
+    "word2": "Genos",
+    "crossover": false,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Héros, entraînement, relation maître-disciple.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-punch-man"
+    ]
+  },
+  {
+    "id": "anime-077",
+    "word1": "Saitama",
+    "word2": "Chauve",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Crâne, cheveux absents, tête.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-punch-man"
+    ]
+  },
+  {
+    "id": "anime-078",
+    "word1": "Genos",
+    "word2": "Grille-pain",
+    "crossover": false,
+    "types": [
+      "character",
+      "object"
+    ],
+    "link": "Métal, chaleur, machine.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-punch-man"
+    ]
+  },
+  {
+    "id": "anime-079",
+    "word1": "King",
+    "word2": "Bluffeur",
+    "crossover": false,
+    "types": [
+      "character",
+      "concept"
+    ],
+    "link": "Réputation, peur, apparence trompeuse.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-punch-man"
+    ]
+  },
+  {
+    "id": "anime-080",
+    "word1": "Saitama",
+    "word2": "Boxeur",
+    "crossover": false,
+    "types": [
+      "character",
+      "profession"
+    ],
+    "link": "Poing, combat, coup.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-punch-man"
+    ]
+  },
+  {
+    "id": "anime-081",
+    "word1": "Light",
+    "word2": "Shikamaru",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Intelligence, stratégie, anticipation.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note",
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-082",
+    "word1": "L",
+    "word2": "Shikamaru",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Déduction, calme, réflexion.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note",
+      "naruto"
+    ]
+  },
+  {
+    "id": "anime-083",
+    "word1": "Light",
+    "word2": "Lelouch",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Manipulation, pouvoir, double identité.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note",
+      "code-geass"
+    ]
+  },
+  {
+    "id": "anime-084",
+    "word1": "Saitama",
+    "word2": "Kratos",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Crâne chauve, force, combat.",
+    "themes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredThemes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredUniverses": [
+      "one-punch-man",
+      "god-of-war"
+    ]
+  },
+  {
+    "id": "anime-085",
+    "word1": "Shenron",
+    "word2": "Dracaufeu",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Dragon par apparence, créature, puissance.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball",
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-086",
+    "word1": "Freezer",
+    "word2": "Mewtwo",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Pouvoirs, laboratoire ou technologie, silhouette claire.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball",
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-087",
+    "word1": "Gaara",
+    "word2": "Crocodile",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Sable, désert, pouvoir.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto",
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-088",
+    "word1": "Sakura",
+    "word2": "Chopper",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Médecine, soins, force.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto",
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-089",
+    "word1": "Naruto",
+    "word2": "Luffy",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Appétit, détermination, amis.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto",
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-090",
+    "word1": "Shikamaru",
+    "word2": "Law",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Stratégie, plan, sang-froid.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto",
+      "one-piece"
+    ]
+  },
+  {
+    "id": "anime-091",
+    "word1": "Ace",
+    "word2": "Salamèche",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Feu, flamme, chaleur.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece",
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-092",
+    "word1": "Nami",
+    "word2": "Pikachu",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Éclair, électricité, orage.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "one-piece",
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-093",
+    "word1": "Goku",
+    "word2": "Saitama",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Force, combat, entraînement.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball",
+      "one-punch-man"
+    ]
+  },
+  {
+    "id": "anime-094",
+    "word1": "Krillin",
+    "word2": "Saitama",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Chauve, arts martiaux, poings.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "dragon-ball",
+      "one-punch-man"
+    ]
+  },
+  {
+    "id": "anime-095",
+    "word1": "Métamorph",
+    "word2": "Mystique",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Copie, apparence, transformation.",
+    "themes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredThemes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredUniverses": [
+      "pokemon",
+      "marvel"
+    ]
+  },
+  {
+    "id": "anime-096",
+    "word1": "Luffy",
+    "word2": "Mister Fantastic",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Élasticité, étirement, corps.",
+    "themes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredThemes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredUniverses": [
+      "one-piece",
+      "marvel"
+    ]
+  },
+  {
+    "id": "anime-097",
+    "word1": "Doflamingo",
+    "word2": "Spider-Man",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Fils, suspension, mouvements aériens.",
+    "themes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredThemes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredUniverses": [
+      "one-piece",
+      "marvel"
+    ]
+  },
+  {
+    "id": "anime-098",
+    "word1": "Kakashi",
+    "word2": "Pikachu",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Électricité, éclair, attaque.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "naruto",
+      "pokemon"
+    ]
+  },
+  {
+    "id": "anime-099",
+    "word1": "Genos",
+    "word2": "Iron Man",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Métal, énergie, technologie.",
+    "themes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredThemes": [
+      "anime",
+      "pop-culture"
+    ],
+    "requiredUniverses": [
+      "one-punch-man",
+      "marvel"
+    ]
+  },
+  {
+    "id": "anime-100",
+    "word1": "Light",
+    "word2": "Doflamingo",
+    "crossover": true,
+    "types": [
+      "character",
+      "character"
+    ],
+    "link": "Manipulation, contrôle, double visage.",
+    "themes": [
+      "anime"
+    ],
+    "requiredThemes": [
+      "anime"
+    ],
+    "requiredUniverses": [
+      "death-note",
+      "one-piece"
+    ]
+  }
+]

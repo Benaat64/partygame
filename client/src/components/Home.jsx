@@ -46,7 +46,7 @@ export default function Home({ disabled, onCreate, onJoin }) {
                 <p className="mb-5 text-sm text-muted-foreground">{timing.matchCount} manches · {timing.maxTurns} tours max. · {timing.phaseSeconds === null ? 'Temps illimité' : `${timing.phaseSeconds} s par indice`}</p>
                 </>}
                 {gameId === 'chrono' && <ChronoOptions value={chronoSettings} onChange={setChronoSettings} disabled={disabled} />}
-                {gameId === 'football' && <p className="mb-5 text-sm text-muted-foreground">250 € chacun · 5 recrues · GB, DC, MC, ATT et Joker</p>}
+                {gameId === 'football' && <p className="mb-5 text-sm text-muted-foreground">250 € chacun · 6 recrues · 5 sur le terrain + 1 sur la touche, placement libre</p>}
                 <Button className="h-12 w-full rounded-xl text-base font-bold" disabled={disabled || nickname.trim().length < 2}>Créer ma room<ArrowRight className="ml-2 size-4" /></Button>
               </form>
             </TabsContent>

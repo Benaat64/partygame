@@ -1,0 +1,205 @@
+{
+  "importedAt": "2026-09-11T09:19:09.452Z",
+  "applied": true,
+  "imported": [
+    {
+      "id": "GB-0",
+      "name": "Gianluigi Buffon",
+      "sourceId": "34159849",
+      "hasPhoto": true
+    },
+    {
+      "id": "GB-1",
+      "name": "Iker Casillas",
+      "sourceId": "34146291",
+      "hasPhoto": true
+    },
+    {
+      "id": "GB-3",
+      "name": "Edwin van der Sar",
+      "sourceId": "34170631",
+      "hasPhoto": true
+    },
+    {
+      "id": "GB-4",
+      "name": "Oliver Kahn",
+      "sourceId": "34161123",
+      "hasPhoto": true
+    },
+    {
+      "id": "GB-5",
+      "name": "Fabien Barthez",
+      "sourceId": "34171440",
+      "hasPhoto": true
+    },
+    {
+      "id": "DC-0",
+      "name": "Paolo Maldini",
+      "sourceId": "34161111",
+      "hasPhoto": true
+    },
+    {
+      "id": "DC-1",
+      "name": "Alessandro Nesta",
+      "sourceId": "34161133",
+      "hasPhoto": true
+    },
+    {
+      "id": "DC-2",
+      "name": "Carles Puyol",
+      "sourceId": "34146356",
+      "hasPhoto": true
+    },
+    {
+      "id": "DC-3",
+      "name": "Fabio Cannavaro",
+      "sourceId": "34161136",
+      "hasPhoto": true
+    },
+    {
+      "id": "DC-4",
+      "name": "Rio Ferdinand",
+      "sourceId": "34146106",
+      "hasPhoto": true
+    },
+    {
+      "id": "DC-5",
+      "name": "Lilian Thuram",
+      "sourceId": "34171439",
+      "hasPhoto": true
+    },
+    {
+      "id": "MC-0",
+      "name": "Zinédine Zidane",
+      "sourceId": "34161049",
+      "hasPhoto": true
+    },
+    {
+      "id": "MC-1",
+      "name": "Xavi",
+      "sourceId": "34146362",
+      "hasPhoto": true
+    },
+    {
+      "id": "MC-2",
+      "name": "Andrés Iniesta",
+      "sourceId": "34146363",
+      "hasPhoto": true
+    },
+    {
+      "id": "MC-3",
+      "name": "Andrea Pirlo",
+      "sourceId": "34160533",
+      "hasPhoto": true
+    },
+    {
+      "id": "MC-4",
+      "name": "Steven Gerrard",
+      "sourceId": "34145910",
+      "hasPhoto": true
+    },
+    {
+      "id": "MC-5",
+      "name": "Frank Lampard",
+      "sourceId": "34145590",
+      "hasPhoto": true
+    },
+    {
+      "id": "ATT-0",
+      "name": "Thierry Henry",
+      "sourceId": "34161137",
+      "hasPhoto": true
+    },
+    {
+      "id": "ATT-2",
+      "name": "Didier Drogba",
+      "sourceId": "34145536",
+      "hasPhoto": true
+    },
+    {
+      "id": "ATT-4",
+      "name": "David Villa",
+      "sourceId": "34159848",
+      "hasPhoto": true
+    },
+    {
+      "id": "ATT-5",
+      "name": "Dennis Bergkamp",
+      "sourceId": "34161247",
+      "hasPhoto": true
+    },
+    {
+      "id": "coach-0",
+      "name": "Alex Ferguson",
+      "sourceId": "34170654",
+      "hasPhoto": true
+    },
+    {
+      "id": "coach-1",
+      "name": "Arsène Wenger",
+      "sourceId": "34170734",
+      "hasPhoto": true
+    },
+    {
+      "id": "coach-2",
+      "name": "José Mourinho",
+      "sourceId": "34168357",
+      "hasPhoto": true
+    },
+    {
+      "id": "coach-3",
+      "name": "Carlo Ancelotti",
+      "sourceId": "34168981",
+      "hasPhoto": true
+    },
+    {
+      "id": "coach-4",
+      "name": "Pep Guardiola",
+      "sourceId": "34164048",
+      "hasPhoto": true
+    },
+    {
+      "id": "coach-5",
+      "name": "Zinédine Zidane",
+      "sourceId": "34161049",
+      "hasPhoto": true
+    },
+    {
+      "id": "ATT-3",
+      "name": "Samuel Eto’o",
+      "sourceId": "34145818",
+      "hasPhoto": true
+    }
+  ],
+  "review": [
+    {
+      "id": "GB-2",
+      "name": "Petr Čech",
+      "reason": "Identité non confirmée : aucun résultat exact unique ou nom ambigu.",
+      "candidates": [
+        {
+          "id": "34145489",
+          "name": "Petr Čech",
+          "nationality": "Czechia",
+          "dateBorn": "1982-05-20",
+          "position": "Goaltender"
+        }
+      ]
+    },
+    {
+      "id": "ATT-1",
+      "name": "Ronaldo",
+      "reason": "Identité non confirmée : aucun résultat exact unique ou nom ambigu.",
+      "candidates": [
+        {
+          "id": "34146304",
+          "name": "Cristiano Ronaldo",
+          "nationality": "Portugal",
+          "dateBorn": "1985-02-05",
+          "position": "Centre-Forward"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

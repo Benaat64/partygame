@@ -3,13 +3,35 @@
     "id": "GB-0",
     "name": "Gianluigi Buffon",
     "position": "GB",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/khpcg01586360050.png",
+    "nationality": "Italy",
+    "dateBorn": "1978-01-28",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/cj1axe1563647999.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/khpcg01586360050.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34159849",
+      "url": "https://www.thesportsdb.com/player/34159849",
+      "position": "Goalkeeper",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "GB-1",
     "name": "Iker Casillas",
     "position": "GB",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/zh95mc1541336479.png",
+    "nationality": "Spain",
+    "dateBorn": "1981-05-20",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/ukfm1p1533286137.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/zh95mc1541336479.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34146291",
+      "url": "https://www.thesportsdb.com/player/34146291",
+      "position": "Goalkeeper",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "GB-2",
@@ -21,97 +43,273 @@
     "id": "GB-3",
     "name": "Edwin van der Sar",
     "position": "GB",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/mbgjfl1640204592.png",
+    "nationality": "The Netherlands",
+    "dateBorn": "1970-10-29",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/e55dw81586639436.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/mbgjfl1640204592.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34170631",
+      "url": "https://www.thesportsdb.com/player/34170631",
+      "position": "CEO",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "GB-4",
     "name": "Oliver Kahn",
     "position": "GB",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/i5wz1x1656104738.png",
+    "nationality": "Germany",
+    "dateBorn": "1969-06-15",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/rtrwvw1479931730.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/i5wz1x1656104738.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34161123",
+      "url": "https://www.thesportsdb.com/player/34161123",
+      "position": "Goalkeeper",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "GB-5",
     "name": "Fabien Barthez",
     "position": "GB",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/thumb/3nypay1595098900.jpg",
+    "nationality": "France",
+    "dateBorn": "1971-06-28",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/3nypay1595098900.jpg",
+    "cutoutUrl": null,
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34171440",
+      "url": "https://www.thesportsdb.com/player/34171440",
+      "position": "Goalkeeper",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "DC-0",
     "name": "Paolo Maldini",
     "position": "DC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/9ccmbp1665653152.png",
+    "nationality": "Italy",
+    "dateBorn": "1968-06-26",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/gmed2k1711199499.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/9ccmbp1665653152.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34161111",
+      "url": "https://www.thesportsdb.com/player/34161111",
+      "position": "Left-Back",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "DC-1",
     "name": "Alessandro Nesta",
     "position": "DC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/yd4h8z1665595797.png",
+    "nationality": "Italy",
+    "dateBorn": "1976-03-19",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/usysts1484137424.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/yd4h8z1665595797.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34161133",
+      "url": "https://www.thesportsdb.com/player/34161133",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "DC-2",
     "name": "Carles Puyol",
     "position": "DC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/qv53581615715607.png",
+    "nationality": "Spain",
+    "dateBorn": "1978-04-13",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/ids1521533491419.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/qv53581615715607.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34146356",
+      "url": "https://www.thesportsdb.com/player/34146356",
+      "position": "Centre-Back",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "DC-3",
     "name": "Fabio Cannavaro",
     "position": "DC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/thumb/x98gdq1778546018.jpg",
+    "nationality": "Italy",
+    "dateBorn": "1973-09-13",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/x98gdq1778546018.jpg",
+    "cutoutUrl": null,
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34161136",
+      "url": "https://www.thesportsdb.com/player/34161136",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "DC-4",
     "name": "Rio Ferdinand",
     "position": "DC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/0n1zfp1707938751.png",
+    "nationality": "England",
+    "dateBorn": "1978-11-07",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/l3ux251707938639.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/0n1zfp1707938751.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34146106",
+      "url": "https://www.thesportsdb.com/player/34146106",
+      "position": "Centre-Back",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "DC-5",
     "name": "Lilian Thuram",
     "position": "DC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/thumb/jrsdlp1594485537.jpg",
+    "nationality": "France",
+    "dateBorn": "1972-01-01",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/jrsdlp1594485537.jpg",
+    "cutoutUrl": null,
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34171439",
+      "url": "https://www.thesportsdb.com/player/34171439",
+      "position": "Defender",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "MC-0",
     "name": "Zinédine Zidane",
     "position": "MC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/ae7bng1586814446.png",
+    "nationality": "France",
+    "dateBorn": "1972-06-23",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/trvvrs1474915622.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/ae7bng1586814446.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34161049",
+      "url": "https://www.thesportsdb.com/player/34161049",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "MC-1",
     "name": "Xavi",
     "position": "MC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/18olk11612092725.png",
+    "nationality": "Spain",
+    "dateBorn": "1980-01-25",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/njp0um1657653161.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/18olk11612092725.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34146362",
+      "url": "https://www.thesportsdb.com/player/34146362",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "MC-2",
     "name": "Andrés Iniesta",
     "position": "MC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/nx7oze1611167333.png",
+    "nationality": "Spain",
+    "dateBorn": "1984-05-11",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/qcw4eh1688646504.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/nx7oze1611167333.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34146363",
+      "url": "https://www.thesportsdb.com/player/34146363",
+      "position": "Central Midfield",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "MC-3",
     "name": "Andrea Pirlo",
     "position": "MC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/x665lb1606483660.png",
+    "nationality": "Italy",
+    "dateBorn": "1979-05-19",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/s1eujl1689493556.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/x665lb1606483660.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34160533",
+      "url": "https://www.thesportsdb.com/player/34160533",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "MC-4",
     "name": "Steven Gerrard",
     "position": "MC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/5fpodm1591461090.png",
+    "nationality": "England",
+    "dateBorn": "1980-05-30",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/gyyytb1717083104.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/5fpodm1591461090.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34145910",
+      "url": "https://www.thesportsdb.com/player/34145910",
+      "position": "Midfielder",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "MC-5",
     "name": "Frank Lampard",
     "position": "MC",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/07gc9d1586771288.png",
+    "nationality": "England",
+    "dateBorn": "1978-06-20",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/qu60cy1718870905.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/07gc9d1586771288.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34145590",
+      "url": "https://www.thesportsdb.com/player/34145590",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "ATT-0",
     "name": "Thierry Henry",
     "position": "ATT",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/omd0kz1698248921.png",
+    "nationality": "France",
+    "dateBorn": "1977-08-17",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/vflsaf1698248867.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/omd0kz1698248921.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34161137",
+      "url": "https://www.thesportsdb.com/player/34161137",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "ATT-1",
@@ -123,24 +321,153 @@
     "id": "ATT-2",
     "name": "Didier Drogba",
     "position": "ATT",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/50zx2g1654178973.png",
+    "nationality": "Ivory Coast",
+    "dateBorn": "1978-03-11",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/o5en9h1710164866.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/50zx2g1654178973.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34145536",
+      "url": "https://www.thesportsdb.com/player/34145536",
+      "position": "Centre-Forward",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "ATT-3",
     "name": "Samuel Eto’o",
     "position": "ATT",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/qrxxvv1430384756.png",
+    "nationality": "Cameroon",
+    "dateBorn": "1981-03-10",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/w5gx7n1710104681.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/qrxxvv1430384756.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34145818",
+      "url": "https://www.thesportsdb.com/player/34145818",
+      "position": "Forward",
+      "importedAt": "2026-09-11T09:19:09.452Z"
+    }
   },
   {
     "id": "ATT-4",
     "name": "David Villa",
     "position": "ATT",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/ecimll1659207823.png",
+    "nationality": "Spain",
+    "dateBorn": "1981-12-03",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/zgerfw1659207687.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/ecimll1659207823.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34159848",
+      "url": "https://www.thesportsdb.com/player/34159848",
+      "position": "Forward",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   },
   {
     "id": "ATT-5",
     "name": "Dennis Bergkamp",
     "position": "ATT",
-    "photoUrl": null
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/45obbq1495135195.png",
+    "nationality": "The Netherlands",
+    "dateBorn": "1969-05-10",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/v7i1pu1490350140.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/45obbq1495135195.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34161247",
+      "url": "https://www.thesportsdb.com/player/34161247",
+      "position": "Second Striker",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
+  },
+  {
+    "id": "coach-0",
+    "name": "Alex Ferguson",
+    "position": "Coach",
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/i1zy861700666834.png",
+    "nationality": "Scotland",
+    "dateBorn": "1941-12-31",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/tm4oig1700666780.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/i1zy861700666834.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34170654",
+      "url": "https://www.thesportsdb.com/player/34170654",
+      "position": "Forward",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
+  },
+  {
+    "id": "coach-1",
+    "name": "Arsène Wenger",
+    "position": "Coach",
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/wdhbi51587238745.png",
+    "nationality": "France",
+    "dateBorn": "1949-10-22",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/qbv1t11595536138.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/wdhbi51587238745.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34170734",
+      "url": "https://www.thesportsdb.com/player/34170734",
+      "position": "Midfielder",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
+  },
+  {
+    "id": "coach-2",
+    "name": "José Mourinho",
+    "position": "Coach",
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/rexihi1586766270.png",
+    "nationality": "Portugal",
+    "dateBorn": "1963-01-26",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/x8gh8w1699634811.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/rexihi1586766270.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34168357",
+      "url": "https://www.thesportsdb.com/player/34168357",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
+  },
+  {
+    "id": "coach-3",
+    "name": "Carlo Ancelotti",
+    "position": "Coach",
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/gvcxix1586771454.png",
+    "nationality": "Italy",
+    "dateBorn": "1959-06-10",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/jbdjl01576946407.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/gvcxix1586771454.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34168981",
+      "url": "https://www.thesportsdb.com/player/34168981",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
+  },
+  {
+    "id": "coach-4",
+    "name": "Pep Guardiola",
+    "position": "Coach",
+    "photoUrl": "https://r2.thesportsdb.com/images/media/player/cutout/2nbj7c1574771874.png",
+    "nationality": "Spain",
+    "dateBorn": "1971-01-18",
+    "portraitUrl": "https://r2.thesportsdb.com/images/media/player/thumb/m4vfto1767952704.jpg",
+    "cutoutUrl": "https://r2.thesportsdb.com/images/media/player/cutout/2nbj7c1574771874.png",
+    "source": {
+      "provider": "TheSportsDB",
+      "id": "34164048",
+      "url": "https://www.thesportsdb.com/player/34164048",
+      "position": "Manager",
+      "importedAt": "2026-09-11T09:17:13.808Z"
+    }
   }
 ]

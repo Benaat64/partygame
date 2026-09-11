@@ -54,7 +54,7 @@ export function registerSocketHandlers(io) {
       }
     }
 
-    for (const action of ['clue', 'vote', 'bid', 'pass', 'recruit', 'begin', 'stop', 'forfeit']) {
+    for (const action of ['clue', 'vote', 'bid', 'pass', 'recruit', 'place', 'begin', 'stop', 'forfeit']) {
       socket.on(`game:${action}`, (payload, ack) => acknowledgeAction(ack, () => {
         const room = store.action(socket.id, action, payload);
         io.to(room.code).emit('room:updated', room);

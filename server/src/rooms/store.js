@@ -33,7 +33,7 @@ export function createRoomStore() {
       gameId: room.gameId,
       gameSessionId: room.gameSessionId,
       settings: structuredClone(room.settings),
-      gameOptions: getGame(room.gameId).options(),
+      gameOptions: getGame(room.gameId).options(room.settings),
       players: [...room.players].map(([id, player]) => ({ ...player, connected: !disconnected.has(id) })),
     };
   }

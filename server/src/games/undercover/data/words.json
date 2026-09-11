@@ -1,14 +1,122 @@
 [
-  { "word1": "Chien", "word2": "Loup", "category": "animals", "difficulty": "easy" },
-  { "word1": "Chat", "word2": "Tigre", "category": "animals", "difficulty": "easy" },
-  { "word1": "Aigle", "word2": "Faucon", "category": "animals", "difficulty": "medium" },
-  { "word1": "Pieuvre", "word2": "Calamar", "category": "animals", "difficulty": "medium" },
-  { "word1": "Cigogne", "word2": "Héron", "category": "animals", "difficulty": "hard" },
-  { "word1": "Grenouille", "word2": "Crapaud", "category": "animals", "difficulty": "hard" },
-  { "word1": "Croissant", "word2": "Pain au chocolat", "category": "food", "difficulty": "easy" },
-  { "word1": "Crêpe", "word2": "Gaufre", "category": "food", "difficulty": "easy" },
-  { "word1": "Raclette", "word2": "Fondue", "category": "food", "difficulty": "medium" },
-  { "word1": "Macaron", "word2": "Meringue", "category": "food", "difficulty": "medium" },
-  { "word1": "Camembert", "word2": "Brie", "category": "food", "difficulty": "hard" },
-  { "word1": "Éclair", "word2": "Religieuse", "category": "food", "difficulty": "hard" }
+  {
+    "word1": "Chien",
+    "word2": "Loup",
+    "id": "classic-1",
+    "themes": [
+      "animals"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Chat",
+    "word2": "Tigre",
+    "id": "classic-2",
+    "themes": [
+      "animals"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Aigle",
+    "word2": "Faucon",
+    "id": "classic-3",
+    "themes": [
+      "animals"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Pieuvre",
+    "word2": "Calamar",
+    "id": "classic-4",
+    "themes": [
+      "animals"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Cigogne",
+    "word2": "Héron",
+    "id": "classic-5",
+    "themes": [
+      "animals"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Grenouille",
+    "word2": "Crapaud",
+    "id": "classic-6",
+    "themes": [
+      "animals"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Croissant",
+    "word2": "Pain au chocolat",
+    "id": "classic-7",
+    "themes": [
+      "food"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Crêpe",
+    "word2": "Gaufre",
+    "id": "classic-8",
+    "themes": [
+      "food"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Raclette",
+    "word2": "Fondue",
+    "id": "classic-9",
+    "themes": [
+      "food"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Macaron",
+    "word2": "Meringue",
+    "id": "classic-10",
+    "themes": [
+      "food"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Camembert",
+    "word2": "Brie",
+    "id": "classic-11",
+    "themes": [
+      "food"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  },
+  {
+    "word1": "Éclair",
+    "word2": "Religieuse",
+    "id": "classic-12",
+    "themes": [
+      "food"
+    ],
+    "requiredThemes": [],
+    "requiredUniverses": []
+  }
 ]

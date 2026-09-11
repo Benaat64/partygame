@@ -1,9 +1,9 @@
 import { readFileSync } from 'node:fs';
 import { randomInt } from 'node:crypto';
 const catalog = JSON.parse(readFileSync(new URL('./data/players.json', import.meta.url), 'utf8'));
-const slots = ['GB','DC','MC','ATT','Joker'];
+const slots = ['GB','DC','MC','ATT','Joker','Coach'];
 function slotFor(team, player) {
-  return slots.find(slot => slot === player.position && !team[slot]) ?? (!team.Joker ? 'Joker' : null);
+  return slots.find(slot => slot === player.position && !team[slot]) ?? slots.find(slot => !team[slot]) ?? null;
 }
 function limit(team) { const empty = slots.filter(slot => !team.slots[slot]).length; return empty ? team.budget - (empty - 1) : 0; }
 function offer(s) {
@@ -48,6 +48,19 @@ export const football = {
   },
   advance: () => false,
   act(s,id,action,payload) {
+    if(action==='place') {
+      const team=s.teams[id];
+      if(!team || !slots.includes(payload?.slot)) throw new Error('Placement invalide.');
+      const from=slots.find(slot=>team.slots[slot]?.id===payload.playerId);
+      if(!from) throw new Error('Cette recrue ne fait pas partie de votre équipe.');
+      const to=payload.slot;
+      if(from!==to) {
+        const card=team.slots[from];
+        if(team.slots[to]) team.slots[from]=team.slots[to]; else delete team.slots[from];
+        team.slots[to]=card;
+      }
+      return;
+    }
     if(s.phase==='finished') throw new Error('Le recrutement est terminé.');
     if(payload?.auction!==s.auction) throw new Error('Cette enchère est terminée.');
     if(id!==s.activeId) throw new Error('Ce n’est pas votre tour.');

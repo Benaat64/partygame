@@ -1,10 +1,6 @@
 import { initializeRoundState, publicState, act, advance } from './rounds.js';
-import { readFileSync } from 'node:fs';
+import { categories, universes, matchingPairs } from './catalog.js';
 import { randomInt } from 'node:crypto';
-
-const words = JSON.parse(readFileSync(new URL('./data/words.json', import.meta.url), 'utf8'));
-const categories = [...new Set(words.map(pair => pair.category))];
-const difficulties = ['easy', 'medium', 'hard'];
 
 function validateSettings(input) {
   if (!input || !Number.isInteger(input.undercoverCount) || input.undercoverCount < 1
@@ -13,8 +9,9 @@ function validateSettings(input) {
   }
   if (!Array.isArray(input.categories) || !input.categories.length
     || input.categories.some(category => !categories.includes(category))
-    || !difficulties.includes(input.difficulty)) {
-    throw new Error('Sélectionnez au moins une catégorie et une difficulté valide.');
+    || (input.universes !== undefined && (!Array.isArray(input.universes) || input.universes.some(u=>!universes.includes(u))))
+    || (input.crossovers !== undefined && typeof input.crossovers !== 'boolean')) {
+    throw new Error('Sélectionnez des thèmes et univers valides.');
   }
   const phaseSeconds = input.phaseSeconds === undefined ? 30 : input.phaseSeconds;
   const maxTurns = input.maxTurns ?? 3;
@@ -28,20 +25,16 @@ function validateSettings(input) {
     phaseSeconds, maxTurns, matchCount,
     undercoverCount: input.undercoverCount,
     categories: [...new Set(input.categories)],
-    difficulty: input.difficulty,
+    universes: [...new Set(input.universes ?? universes)],
+    crossovers: input.crossovers ?? true,
   };
-  if (!matchingPairs(settings).length) throw new Error('Aucune paire ne correspond à ces paramètres.');
   return settings;
-}
-
-function matchingPairs(settings) {
-  return words.filter(pair => settings.categories.includes(pair.category) && pair.difficulty === settings.difficulty);
 }
 
 export const undercover = {
   publicState, act, advance,
-  defaultSettings: () => ({ undercoverCount: 1, phaseSeconds: 30, matchCount: 3, maxTurns: 3, categories: [...categories], difficulty: 'easy' }),
-  options: () => ({ categories: [...categories], difficulties: [...difficulties] }),
+  defaultSettings: () => ({ undercoverCount: 1, phaseSeconds: 30, matchCount: 3, maxTurns: 3, categories: ['animals','food'], universes: [...universes], crossovers: true }),
+  options: settings => ({ categories: [...categories], universes: [...universes], pairCount: settings ? matchingPairs(settings).length : 0 }),
   validateSettings,
   next(state, players) {
     if (state.phase !== 'finished' || state.match >= state.settings.matchCount) {
@@ -61,6 +54,7 @@ export const undercover = {
       throw new Error('Les Civils doivent être plus nombreux que les Undercover.');
     }
     const pairs = matchingPairs(settings);
+    if (!pairs.length) throw new Error('Aucune paire disponible : ajoutez un thème ou un univers.');
     const pair = pairs[randomInt(pairs.length)];
     const shuffled = [...players];
     for (let i = shuffled.length - 1; i > 0; i--) {
