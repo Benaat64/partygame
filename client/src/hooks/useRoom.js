@@ -11,26 +11,43 @@ export function useRoom() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    try { tokenRef.current = sessionStorage.getItem('partyroom-session'); } catch { /* Storage may be disabled. */ }
-    const socket = io();
+    try {
+      tokenRef.current = sessionStorage.getItem('partyroom-session');
+    } catch {
+      /* Storage may be disabled. */
+    }
+    const socket = io(import.meta.env.VITE_SERVER_URL?.trim() || undefined);
     socketRef.current = socket;
     socket.on('connect', async () => {
       setConnected(false);
       if (tokenRef.current) {
         try {
-          const response = await socket.timeout(5000).emitWithAck('room:resume', tokenRef.current);
+          const response = await socket
+            .timeout(5000)
+            .emitWithAck('room:resume', tokenRef.current);
           if (!socket.connected || socketRef.current !== socket) return;
           if (response.ok) {
-            setSession({ room: response.room, playerId: response.playerId, secret: response.secret });
+            setSession({
+              room: response.room,
+              playerId: response.playerId,
+              secret: response.secret,
+            });
             setError('');
           } else {
             tokenRef.current = null;
-            try { sessionStorage.removeItem('partyroom-session'); } catch { /* Optional storage. */ }
+            try {
+              sessionStorage.removeItem('partyroom-session');
+            } catch {
+              /* Optional storage. */
+            }
             setSession(null);
             setError(response.error);
           }
         } catch {
-          if (socketRef.current === socket && socket.connected) { socket.disconnect(); socket.connect(); }
+          if (socketRef.current === socket && socket.connected) {
+            socket.disconnect();
+            socket.connect();
+          }
           return;
         }
       }
@@ -40,16 +57,30 @@ export function useRoom() {
     socket.on('disconnect', () => {
       setConnected(false);
       setSession(null);
-      setError('Connexion interrompue. Reconnexion automatique en cours (place réservée 60 secondes).');
+      setError(
+        'Connexion interrompue. Reconnexion automatique en cours (place réservée 60 secondes).',
+      );
     });
-    socket.on('room:updated', room => {
-      setSession(current => current?.room.code === room.code
-        ? { ...current, room, secret: current.room.gameSessionId === room.gameSessionId ? current.secret : null }
-        : current);
+    socket.on('room:updated', (room) => {
+      setSession((current) =>
+        current?.room.code === room.code
+          ? {
+              ...current,
+              room,
+              secret:
+                current.room.gameSessionId === room.gameSessionId
+                  ? current.secret
+                  : null,
+            }
+          : current,
+      );
     });
-    socket.on('game:private', secret => {
-      setSession(current => current?.room.gameSessionId === secret.gameSessionId
-        ? { ...current, secret } : current);
+    socket.on('game:private', (secret) => {
+      setSession((current) =>
+        current?.room.gameSessionId === secret.gameSessionId
+          ? { ...current, secret }
+          : current,
+      );
     });
     return () => {
       socket.removeAllListeners();
@@ -62,32 +93,48 @@ export function useRoom() {
     const socket = socketRef.current;
     if (busy.current) return;
     if (!socket?.connected) {
-      setError('Le serveur est indisponible. Patientez pendant la reconnexion.');
+      setError(
+        'Le serveur est indisponible. Patientez pendant la reconnexion.',
+      );
       return;
     }
     busy.current = true;
     setPending(true);
     setError('');
     try {
-      const response = event === 'room:leave'
-        ? await socket.timeout(5000).emitWithAck(event)
-        : await socket.timeout(5000).emitWithAck(event, payload);
+      const response =
+        event === 'room:leave'
+          ? await socket.timeout(5000).emitWithAck(event)
+          : await socket.timeout(5000).emitWithAck(event, payload);
       if (!response.ok) throw new Error(response.error);
       if (event === 'room:leave') {
         setSession(null);
         tokenRef.current = null;
-        try { sessionStorage.removeItem('partyroom-session'); } catch { /* Optional storage. */ }
-      }
-      else if (event === 'room:create' || event === 'room:join') {
+        try {
+          sessionStorage.removeItem('partyroom-session');
+        } catch {
+          /* Optional storage. */
+        }
+      } else if (event === 'room:create' || event === 'room:join') {
         tokenRef.current = response.resumeToken;
-        try { sessionStorage.setItem('partyroom-session', response.resumeToken); } catch { /* Reconnection still works without refresh. */ }
-        setSession({ room: response.room, playerId: response.playerId, secret: null });
+        try {
+          sessionStorage.setItem('partyroom-session', response.resumeToken);
+        } catch {
+          /* Reconnection still works without refresh. */
+        }
+        setSession({
+          room: response.room,
+          playerId: response.playerId,
+          secret: null,
+        });
       }
       return true;
     } catch (err) {
-      setError(err.message === 'operation has timed out'
-        ? 'Le serveur ne répond pas. La connexion a été réinitialisée ; réessayez.'
-        : err.message);
+      setError(
+        err.message === 'operation has timed out'
+          ? 'Le serveur ne répond pas. La connexion a été réinitialisée ; réessayez.'
+          : err.message,
+      );
       if (err.message === 'operation has timed out') {
         socket.disconnect();
         socket.connect();

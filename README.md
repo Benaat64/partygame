@@ -176,3 +176,17 @@ Module serveur : server/src/games/chrono. Interface : client/src/games/chrono. �
 Le rapport `server/src/games/football/data/import-report.json` liste les correspondances, les cas à vérifier et les erreurs. Les noms ambigus ne sont pas associés automatiquement. Après vérification de l’identité, renseigner `source.id` avec l’identifiant TheSportsDB permet les imports suivants par identifiant. Une erreur réseau conserve le profil existant. Le script attend 2,2 secondes entre les appels et utilise la clé publique 123 ; une clé personnelle peut être fournie via `THESPORTSDB_API_KEY`.
 
 Les images restent des liens externes ; elles ne sont pas téléchargées par ce script. La source et la date d’import sont conservées sur chaque profil. Source : [TheSportsDB](https://www.thesportsdb.com), [documentation](https://www.thesportsdb.com/documentation), [conditions d’utilisation des données et images](https://www.thesportsdb.com/docs_terms_of_use.php). La présence d’un lien ne garantit pas la disponibilité de l’image. L’import est manuel : aucune requête à l’API n’est nécessaire pendant une partie. Redémarrer le serveur après un import pour recharger le catalogue.
+
+### Déploiement : Vercel (frontend) + Railway (backend)
+
+Les deux services utilisent le même dépôt, avec la racine du dépôt comme Root Directory.
+
+1. Railway : connecter GitHub. Le Dockerfile installe seulement les dépendances serveur ; aucun build React. Supprimer les anciens overrides de Build Command. railway.json configure le démarrage et /api/health. NODE_ENV=production est déjà défini dans Docker. Garder une seule réplique et laisser Railway fournir PORT.
+2. Railway > Networking : générer le domaine HTTPS public. Vérifier https://ADRESSE-RAILWAY/api/health. La racine du backend retourne normalement 404 : elle ne sert plus le frontend.
+3. Vercel : importer le même dépôt, Root Directory à la racine. vercel.json configure npm ci --include=dev, npm run build et client/dist. Ajouter VITE_SERVER_URL=https://ADRESSE-RAILWAY avant de déployer (sans /socket.io).
+4. Copier le domaine stable de production Vercel. Railway > Variables : CLIENT_ORIGINS=https://ADRESSE-VERCEL. Redéployer Railway. Plusieurs origines explicites peuvent être séparées par des virgules ; ne pas ajouter toutes les previews via un joker.
+5. Ouvrir l’URL Vercel : vérifier En ligne, créer une room et la rejoindre depuis un second appareil ; lancer une partie.
+
+VITE_SERVER_URL est une adresse publique incluse dans le build, pas un secret. Modifier cette variable nécessite un nouveau déploiement Vercel. CLIENT_ORIGINS configure CORS côté Socket.io ; ce n’est pas une authentification. Les fichiers .env.example sont des exemples, les vraies valeurs se saisissent dans les plateformes. En local, laisser VITE_SERVER_URL vide : le proxy Vite existant continue de fonctionner.
+
+Les rooms restent en mémoire : redémarrage, veille ou déploiement les efface. L’offre gratuite Railway dépend des crédits disponibles. Ne pas lancer l’import football au déploiement ; les catalogues JSON sont déjà dans Git.

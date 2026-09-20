@@ -12,6 +12,10 @@
     "dev:server": "npm run dev --workspace server",
     "build": "npm run build --workspace client",
     "start:server": "npm run start --workspace server",
-    "data:football": "node server/scripts/import-football.js"
+    "data:football": "node server/scripts/import-football.js",
+    "start": "node server/src/index.js"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
