@@ -9,7 +9,7 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, socketOptions());
 
 registerSocketHandlers(io);
-
+console.log('CLIENT_ORIGINS:', process.env.CLIENT_ORIGINS);
 httpServer.listen(port, '0.0.0.0', () => {
   console.log(`PartyRoom server listening on http://localhost:${port}`);
 });
