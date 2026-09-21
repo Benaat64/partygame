@@ -6,9 +6,7 @@ export default function Timing({ value, onChange, disabled = false }) {
       disabled={disabled}
       className="my-5 grid gap-4 rounded-2xl border border-border bg-background/30 p-4 text-sm disabled:opacity-65"
     >
-      <legend className="px-2 text-muted-foreground">
-        Durée, manches et tours
-      </legend>
+      <legend className="px-2 text-muted-foreground">Durée et manches</legend>
       <label className="grid gap-2">
         Temps par indice / vote
         <select
@@ -46,28 +44,12 @@ export default function Timing({ value, onChange, disabled = false }) {
           ))}
         </select>
       </label>
-      <label className="grid gap-2">
-        Tours maximum par manche
-        <select
-          className={selectClass}
-          value={value.maxTurns}
-          onChange={(e) =>
-            onChange({ ...value, maxTurns: Number(e.target.value) })
-          }
-        >
-          {[1, 2, 3, 4, 5].map((n) => (
-            <option key={n} value={n}>
-              {n}
-            </option>
-          ))}
-        </select>
-      </label>
       <p className="text-sm text-muted-foreground">
-        Une manche = de nouveaux rôles et mots, avec tous les joueurs. Un tour =
-        indices puis vote. Les Undercover gagnent s’ils survivent au dernier
-        tour. Les points se cumulent entre les manches. En temps illimité,
-        chaque joueur doit envoyer son indice à son tour, puis tous les joueurs
-        encore en jeu votent.
+        Une manche commence avec de nouveaux mots et rôles. Chacun donne deux
+        indices, à tour de rôle, avant le premier vote. Après une égalité ou une
+        élimination, un nouveau tour d’indices précède le vote suivant. La
+        manche se termine quand les Undercover sont éliminés ou aussi nombreux
+        que les Civils.
       </p>
     </fieldset>
   );

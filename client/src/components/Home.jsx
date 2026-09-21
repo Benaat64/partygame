@@ -63,7 +63,6 @@ export default function Home({
   const [timing, setTiming] = useState({
     phaseSeconds: 30,
     matchCount: 3,
-    maxTurns: 3,
   });
   const [code, setCode] = useState('');
   if (screen === 'library')

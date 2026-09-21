@@ -40,7 +40,7 @@ export default function CreateRoomForm({
             <Timing value={timing} onChange={setTiming} disabled={disabled} />
           </details>
           <p className="mb-5 text-sm text-muted-foreground">
-            {timing.matchCount} manches · {timing.maxTurns} tours max. ·{' '}
+            {timing.matchCount} manches · 2 tours avant le vote ·{' '}
             {timing.phaseSeconds === null
               ? 'Temps illimité'
               : `${timing.phaseSeconds} s par indice`}

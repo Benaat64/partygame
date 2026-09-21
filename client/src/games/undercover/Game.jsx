@@ -5,7 +5,7 @@ import VotePanel from './VotePanel';
 import TurnNotice from '@/components/TurnNotice';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Send, Users } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const button = 'min-h-12 rounded-xl px-4 py-3 font-semibold';
@@ -63,9 +63,9 @@ export default function Game({
       </p>
       <h2 className="my-3 text-2xl font-bold">
         Undercover · Manche {game.match}/{room.settings.matchCount} · Tour{' '}
-        {game.turn}/{room.settings.maxTurns}
+        {game.turn}
       </h2>
-      {!finished && (
+      {!finished && (room.paused || !alive || game.phase === 'vote') && (
         <TurnNotice
           active={alive && (game.phase === 'clues' ? myClue : !voted)}
           paused={room.paused}
@@ -93,7 +93,7 @@ export default function Game({
                     ? 'Attends les autres votes ou la fin du chrono.'
                     : 'Tous les joueurs encore en jeu votent. Choisis qui tu soupçonnes.'
                   : myClue
-                    ? 'Écris ton indice dans le tchat, puis appuie sur Envoyer mon indice.'
+                    ? 'Écris ton indice sous le tableau, puis appuie sur Envoyer mon indice.'
                     : sent
                       ? 'Ton indice est envoyé. Les autres joueurs prennent la parole.'
                       : 'Patiente : tu pourras envoyer ton indice quand ton tour arrivera.'
@@ -111,65 +111,90 @@ export default function Game({
               ? 'Temps illimité'
               : `Temps restant : ${seconds} s`}
       </p>
-      {!finished && (
-        <>
-          {!alive && (
-            <p className="my-4 text-amber-200">
-              Vous êtes éliminé. Vous pouvez suivre le tchat et les résultats.
-            </p>
-          )}
-          <SecretCard
-            revealed={revealed}
-            secret={secret}
-            onToggle={() => setRevealed((value) => !value)}
-          />
-        </>
-      )}
       {finished && <Results game={game} players={room.players} />}
       {!finished && (
-        <p className="my-3 text-sm text-muted-foreground">
-          Ordre des indices : {game.clueOrder.map(name).join(' → ')}
+        <p className="text-sm text-muted-foreground">
+          {game.turn <= 2 && !game.results.length
+            ? 'Deux tours d’indices avant le premier vote.'
+            : 'Un tour d’indices, puis un nouveau vote.'}
+        </p>
+      )}
+      {!!game.results.length && !finished && (
+        <p
+          role="status"
+          className="rounded-xl border border-border bg-primary/10 p-4 font-medium"
+        >
+          {game.results.at(-1).eliminated
+            ? `${name(game.results.at(-1).eliminated)} est éliminé. Les autres continuent.`
+            : 'Aucune élimination : donnez un nouvel indice pour départager les soupçons.'}
         </p>
       )}
       <ClueLog
+        game={game}
         messages={game.messages}
         players={room.players}
         playerId={playerId}
-      />
-      {!finished && alive && game.phase === 'clues' && (
-        <form
-          className="my-4 grid gap-3"
-          onSubmit={async (event) => {
-            event.preventDefault();
-            if (await action('clue', { text })) setText('');
-          }}
-        >
-          <label htmlFor="clue" className="text-sm">
-            {sent
-              ? 'Indice envoyé. Attendez le vote.'
-              : !myClue
-                ? `Attendez votre tour : ${name(game.currentPlayerId)} donne son indice.`
-                : 'Votre indice (120 caractères maximum)'}
-          </label>
-          <Input
-            id="clue"
-            className="min-h-12 rounded-xl border border-input bg-background/60 p-3 focus-visible:outline-2 focus-visible:outline-ring"
-            value={text}
-            maxLength={120}
-            disabled={disabled || sent || !myClue}
-            onChange={(event) => setText(event.target.value)}
-            required
-            autoComplete="off"
-          />
-          <Button
-            className={button}
-            disabled={disabled || sent || !myClue || !text.trim()}
+        paused={room.paused}
+      >
+        {!finished && alive && game.phase === 'clues' && (
+          <form
+            className={`border-t border-border p-4 sm:p-5 ${myClue ? 'bg-primary/10' : 'bg-background/40'}`}
+            onSubmit={async (event) => {
+              event.preventDefault();
+              if (await action('clue', { text })) setText('');
+            }}
           >
-            <Send className="size-4" />
-            Envoyer mon indice
-          </Button>
-        </form>
-      )}
+            <div className="mb-3 flex items-center justify-between gap-3 text-sm">
+              <label htmlFor="clue" className="font-bold">
+                {sent
+                  ? 'Ton indice est posé ✓'
+                  : myClue
+                    ? 'À toi. Brouille les pistes.'
+                    : 'Ton prochain indice'}
+              </label>
+              <span className="shrink-0 text-xs tabular-nums text-muted-foreground">
+                {text.length}/120
+              </span>
+            </div>
+            <div className="flex items-center gap-2 rounded-2xl border-2 border-border bg-background p-2 transition-colors focus-within:border-foreground">
+              <Input
+                id="clue"
+                className="min-w-0 flex-1 border-0 bg-transparent shadow-none focus-visible:ring-0"
+                placeholder={
+                  sent
+                    ? 'Bien joué, écoute les autres…'
+                    : myClue
+                      ? 'Un indice, sans trop en dire…'
+                      : 'En attendant ton tour…'
+                }
+                value={text}
+                maxLength={120}
+                disabled={disabled || sent || !myClue}
+                onChange={(event) => setText(event.target.value)}
+                required
+                autoComplete="off"
+                aria-describedby="clue-hint"
+              />
+              <Button
+                className="size-11 shrink-0 rounded-xl p-0"
+                aria-label="Envoyer mon indice"
+                disabled={disabled || sent || !myClue || !text.trim()}
+              >
+                <Send className="size-5" />
+              </Button>
+            </div>
+            <p id="clue-hint" className="mt-2 text-xs text-muted-foreground">
+              {room.paused
+                ? 'La partie est en pause.'
+                : sent
+                  ? 'Les autres joueurs prennent la parole.'
+                  : myClue
+                    ? 'Entrée ou la flèche pour poser ton indice.'
+                    : `C’est au tour de ${name(game.currentPlayerId)}.`}
+            </p>
+          </form>
+        )}
+      </ClueLog>
       {!finished && game.phase === 'vote' && (
         <VotePanel
           game={game}
@@ -181,25 +206,13 @@ export default function Game({
           onVote={(targetId) => action('vote', { targetId })}
         />
       )}
-      <h3 className="my-3 flex items-center gap-2 font-bold">
-        <Users className="size-5 text-primary" />
-        La bande
-      </h3>
-      <ul className="grid gap-2 sm:grid-cols-2">
-        {room.players.map((player) => (
-          <li
-            className="rounded-xl border border-border bg-card p-3 text-sm"
-            key={player.id}
-          >
-            {player.nickname} ·{' '}
-            {!player.connected
-              ? 'Reconnexion…'
-              : game.alive.includes(player.id)
-                ? 'En jeu'
-                : 'Éliminé'}
-          </li>
-        ))}
-      </ul>
+      {!finished && (
+        <SecretCard
+          revealed={revealed}
+          secret={secret}
+          onToggle={() => setRevealed((value) => !value)}
+        />
+      )}
       {!!game.results.length && (
         <div className="my-4" aria-live="polite">
           <h3 className="font-bold">Résultats des votes</h3>
@@ -215,10 +228,10 @@ export default function Game({
         </div>
       )}
       <p className="my-4 text-sm text-muted-foreground">
-        Un indice et un vote par joueur et par tour. Une égalité n’élimine
-        personne. Une coupure réserve la place 60 secondes et met la partie en
-        pause. Un départ volontaire ou un délai expiré ramène le groupe au
-        lobby.
+        Deux tours avant le premier vote, puis un tour entre chaque vote. Une
+        égalité n’élimine personne. Une coupure réserve la place 60 secondes et
+        met la partie en pause. Un départ volontaire ou un délai expiré ramène
+        le groupe au lobby.
       </p>
       <div className="mt-4 grid gap-3">
         {room.hostId === playerId && finished && !game.seriesFinished && (
