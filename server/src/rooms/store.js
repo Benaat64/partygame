@@ -59,6 +59,11 @@ export function createRoomStore() {
     return { room: snapshot(room), playerId: player.id, resumeToken };
   }
 
+  function privateCard(room, playerId) {
+    const data = getGame(room.gameId).privateState?.(room.gameState, playerId);
+    return data ? { gameSessionId: room.gameSessionId, ...data } : null;
+  }
+
   function deal(room, state) {
     room.gameState = state;
     room.gameSessionId = randomUUID();
@@ -67,7 +72,7 @@ export function createRoomStore() {
       room: snapshot(room),
       deliveries: [...room.players].filter(([, player]) => state.assignments?.has(player.id)).map(([recipient, player]) => ({
         recipient,
-        secret: { gameSessionId: room.gameSessionId, ...state.assignments?.get(player.id) },
+        secret: privateCard(room, player.id),
       })),
     };
   }
@@ -169,7 +174,7 @@ export function createRoomStore() {
       credentials.set(token, socketId);
       presence(room, now);
       return { room: snapshot(room), playerId: player.id, resumeToken: token, previousId,
-        secret: room.gameState?.assignments?.has(player.id) ? { gameSessionId: room.gameSessionId, ...room.gameState.assignments?.get(player.id) } : null };
+        secret: privateCard(room, player.id) };
     },
     leave(socketId) {
       const code = memberships.get(socketId);

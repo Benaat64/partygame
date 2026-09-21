@@ -28,6 +28,7 @@ test('reprise privée : identité, hôte, carte, indices et échéance conservé
   assert.equal(resumed.room.game.messages.length,1);
   assert.equal(resumed.room.game.deadline,paused.game.deadline+40000);
   assert.deepEqual(resumed.secret,started.deliveries.find(d=>d.recipient==='a').secret);
+  assert.deepEqual(Object.keys(resumed.secret).sort(), ['gameSessionId', 'word']);
   assert.equal(store.disconnect('a'),null);
   assert.throws(() => store.action('a','clue',{}));
 });

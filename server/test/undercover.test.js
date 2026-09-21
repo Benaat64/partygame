@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { Server } from 'socket.io';
 import { io as connect } from 'socket.io-client';
+import { matchingPairs } from '../src/games/undercover/catalog.js';
 import { undercover } from '../src/games/undercover/index.js';
 import { createRoomStore } from '../src/rooms/store.js';
 import { registerSocketHandlers } from '../src/socket/index.js';
@@ -18,12 +19,12 @@ test('Undercover : filtrage, répartition et validation', () => {
     assert.equal(civils.length, 3);
     assert.equal(new Set(civils.map(s => s.word)).size, 1);
     const spy = secrets.find(s => s.role === 'undercover');
-    assert.ok(['Cigogne/Héron', 'Grenouille/Crapaud'].includes(`${civils[0].word}/${spy.word}`));
+    assert.ok(matchingPairs(settings).some(p => p.word1 === civils[0].word && p.word2 === spy.word));
     assert.equal(secrets.filter(s => s.role === 'undercover').length, 2);
     assert.ok(secrets.every(s => s.role === 'civil' || s.role === 'undercover'));
     assert.ok(secrets.every(s => typeof s.word === 'string'));
   }
-  for (const patch of [{ undercoverCount: -1 }, { undercoverCount: 0.5 }, { undercoverCount: 0 }, { categories: [] }, { categories: ['unknown'] }, { difficulty: 'unknown' }]) {
+  for (const patch of [{ undercoverCount: -1 }, { undercoverCount: 0.5 }, { undercoverCount: 0 }, { categories: [] }, { categories: ['unknown'] }]) {
     assert.throws(() => undercover.validateSettings({ ...settings, ...patch }));
   }
   assert.throws(() => undercover.start(players.slice(0, 2), settings), /3 joueurs/);
@@ -87,8 +88,8 @@ test('Socket.io : un seul secret par destinataire, aucun secret public ou extern
     assert.deepEqual(records.map(r => r.secrets.length), [1, 1, 1, 0]);
     assert.equal(records[3].public.length, 0);
     const secrets = records.slice(0, 3).map(r => r.secrets[0]);
-    assert.equal(secrets.filter(s => s.role === 'civil').length, 2);
-    assert.equal(secrets.filter(s => s.role === 'undercover').length, 1);
+    for (const secret of secrets) assert.deepEqual(Object.keys(secret).sort(), ['gameSessionId', 'word']);
+    assert.equal(new Set(secrets.map(s => s.word)).size, 2);
     assert.equal(new Set(secrets.map(s => s.gameSessionId)).size, 1);
     for (const record of records) {
       for (const room of record.public) {

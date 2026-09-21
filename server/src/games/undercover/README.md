@@ -2,7 +2,7 @@
 
 index.js valide les paramètres et distribue les rôles. rounds.js gère les tours d'indices/vote, éliminations, délais et scores. Les données restent dans data/words.json côté serveur, à partir de la [référence demandée](https://undercover.gg/fr/words).
 
-Une partie comprend 1 à 5 manches avec redistribution ; chaque manche comporte 1 à 5 tours maximum. Temps par joueur pour son indice, puis durée du vote : 10, 20, 30, 40 ou 60 secondes, ou Illimité (phaseSeconds: null, sans échéance). Valeurs par défaut : 3 manches, 3 tours et 30 secondes.
+Une partie comprend 1 à 5 manches avec redistribution ; chaque manche commence par deux tours d’indices avant le premier vote. Une égalité ou une élimination sans victoire ouvre un nouveau tour d’indices puis un vote, sans limite de tours. Temps par joueur pour son indice, puis durée du vote : 10, 20, 30, 40 ou 60 secondes, ou Illimité (phaseSeconds: null, sans échéance). Valeurs par défaut : 3 manches et 30 secondes.
 
 Les Civils gagnent la manche quand tous les Undercover sont éliminés ; les Undercover gagnent à parité ou à la limite de tours. Une égalité de votes n'élimine personne. Points accordés une seule fois à toute l'équipe gagnante, même éliminée : Civil +2, Undercover +3.
 

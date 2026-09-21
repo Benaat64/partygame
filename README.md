@@ -113,11 +113,11 @@ Si l'adresse ne répond pas, vérifier que le pare-feu autorise Node sur le rés
 
 Une partie contient **1 à 5 manches**. Chaque manche redistribue les rôles et les mots et remet tous les joueurs en jeu. Elle contient au maximum **1 à 5 tours**. Un tour comprend une phase d'indices suivie d'un vote.
 
-Temps par joueur pour son indice, puis durée du vote : **10, 20, 30, 40 ou 60 secondes, ou Illimité**. En mode illimité, aucun délai ne fait avancer la phase : tous les joueurs vivants doivent envoyer leur indice puis voter. Réglages par défaut : **3 manches, 3 tours maximum, 30 secondes par phase**. Disponibles dès la création et modifiables par l'hôte au lobby.
+Temps par joueur pour son indice, puis durée du vote : **10, 20, 30, 40 ou 60 secondes, ou Illimité**. En mode illimité, aucun délai ne fait avancer la phase : tous les joueurs vivants doivent envoyer leur indice puis voter. Réglages par défaut : **3 manches, 30 secondes par phase**. Disponibles dès la création et modifiables par l'hôte au lobby.
 
 Chaque joueur vivant envoie un indice de 1 à 120 caractères par tour dans le tchat. Les indices sont envoyés chacun son tour. Après le dernier joueur, le vote collectif commence. Un seul vote par joueur vivant contre un autre joueur vivant. Les cibles restent privées jusqu'au décompte. Tous les votes reçus ou le délai écoulé déclenchent l'élimination du joueur ayant le plus de voix ; une égalité ou l'absence de votes n'élimine personne.
 
-Les Civils gagnent la manche en éliminant tous les Undercover. Les Undercover gagnent à parité ou en survivant au dernier tour. Une victoire Civil donne **2 points** à chaque Civil, une victoire Undercover **3 points** à chaque Undercover, même éliminé ; une défaite donne 0 point. Le serveur attribue les points une seule fois à la fin de chaque manche.
+Les Civils gagnent la manche en éliminant tous les Undercover. Les Undercover gagnent à parité avec les Civils. Une victoire Civil donne **2 points** à chaque Civil, une victoire Undercover **3 points** à chaque Undercover, même éliminé ; une défaite donne 0 point. Le serveur attribue les points une seule fois à la fin de chaque manche.
 
 À chaque fin de manche, les cartes sont révélées et le classement provisoire est affiché. L'hôte lance la manche suivante avec de nouvelles attributions privées, tous les joueurs en jeu, un tchat et des votes vides, et les scores conservés. Après la dernière manche, le classement final désigne le ou les joueurs ayant le plus de points (ex æquo possibles). Rejouer revient au lobby et remet les scores à zéro au prochain lancement.
 
@@ -190,3 +190,5 @@ Les deux services utilisent le même dépôt, avec la racine du dépôt comme Ro
 VITE_SERVER_URL est une adresse publique incluse dans le build, pas un secret. Modifier cette variable nécessite un nouveau déploiement Vercel. CLIENT_ORIGINS configure CORS côté Socket.io ; ce n’est pas une authentification. Les fichiers .env.example sont des exemples, les vraies valeurs se saisissent dans les plateformes. En local, laisser VITE_SERVER_URL vide : le proxy Vite existant continue de fonctionner.
 
 Les rooms restent en mémoire : redémarrage, veille ou déploiement les efface. L’offre gratuite Railway dépend des crédits disponibles. Ne pas lancer l’import football au déploiement ; les catalogues JSON sont déjà dans Git.
+
+Undercover : deux tours d’indices précèdent le premier vote. Après une égalité (ou aucun vote), un nouveau tour d’indices puis un vote sont proposés jusqu’à une élimination. Après une élimination sans victoire, un seul tour précède le vote suivant. Il n’y a plus de limite de tours.
