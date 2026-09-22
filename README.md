@@ -1,194 +1,225 @@
-# PartyRoom
+<p align="center">
+  <img src="client/public/sofa.svg" width="80" alt="Logo SOFA" />
+</p>
 
-Socle d'une plateforme de mini-jeux multijoueur : React/Vite, Tailwind CSS, Express et Socket.io, en JavaScript avec modules ES. Aucun accès à une base de données.
+<h1 align="center">SOFA</h1>
 
-Les styles utilisent les classes utilitaires Tailwind directement dans les composants React et dans `client/index.html` pour la base de page. `client/src/styles.css` contient l’import Tailwind, les couleurs et rayons du thème shadcn, ainsi que la couleur de bordure de base. Le plugin `@tailwindcss/vite` génère le CSS pendant le développement et le build, selon l'[installation officielle avec Vite](https://tailwindcss.com/docs/installation/using-vite).
+<p align="center">
+  <strong>Sit. Play. Laugh.</strong><br />
+  Trois mini-jeux multijoueur dans le navigateur. Un pseudo, un code, et la partie commence.
+</p>
 
-## Démarrage
+<p align="center">
+  <a href="https://partygame-client.vercel.app">Jouer à SOFA</a> ·
+  <a href="#installation">Installer le projet</a> ·
+  <a href="#architecture">Explorer l’architecture</a>
+</p>
 
-Depuis la racine, installer les dépendances :
+---
 
-```sh
-npm install
+SOFA est une plateforme de jeux entre amis, sans inscription. Chaque joueur rejoint depuis son téléphone ou son ordinateur ; le lobby, les tours et les résultats sont synchronisés en temps réel.
+
+Le projet met en pratique une application React, un serveur de jeu autoritaire et une architecture permettant d’ajouter des jeux sans réécrire la gestion des rooms.
+
+## Les jeux
+
+| Jeu | Joueurs | Le principe |
+| --- | --- | --- |
+| **Undercover** | 3 minimum | Donne des indices sur ton mot, compare ceux des autres et débusque les intrus. Personne ne connaît son propre camp. |
+| **Mercato** | 2 | Avec 250 € fictifs chacun, remporte les enchères et compose ton équipe de football. |
+| **Défi Chrono** | 2 minimum | Arrête le buzzer au plus près du temps cible. Pour corser le jeu, masque le compteur. |
+
+<details>
+<summary><strong>Les règles en détail</strong></summary>
+
+### Undercover
+
+- Les Civils reçoivent un même mot et les Undercover un mot associé. Chaque joueur reçoit **uniquement son mot**, jamais son rôle pendant la manche.
+- L’hôte sélectionne les thèmes, les univers, les crossovers et le nombre d’Undercover. Les Civils doivent être majoritaires au départ.
+- Deux tours d’indices précèdent le premier vote. Chacun parle à son tour ; le tableau regroupe les indices par joueur.
+- Une égalité ou l’absence de vote entraîne un tour d’indices supplémentaire, puis un nouveau vote. Après une élimination sans victoire, un seul tour précède le prochain vote.
+- Les Civils gagnent en éliminant tous les Undercover. Les Undercover gagnent lorsqu’ils sont au moins aussi nombreux que les Civils restants. Pas de limite de tours.
+- Une partie contient 1 à 5 manches. Une victoire rapporte 2 points à chaque Civil ou 3 à chaque Undercover du camp gagnant, même éliminé.
+- Les rôles et mots sont révélés à la fin de chaque manche. L’ordre de parole est tiré au sort à chaque nouvelle manche.
+- Temps par indice et par vote : 10, 20, 30, 40, 60 secondes ou illimité. Mr White n’est pas implémenté.
+
+### Mercato
+
+- Chaque participant dispose de 250 € et de six emplacements : GB, DC, MC, ATT, Joker et Coach.
+- L’ouverture des enchères alterne entre les joueurs. Celui qui ouvre doit miser ; l’adversaire peut surenchérir ou abandonner.
+- Le montant maximal conserve 1 € pour chaque emplacement qui restera à remplir après l’achat. Les raccourcis ¼, ½, ¾ et Max préparent la mise, sans la valider.
+- Le placement est libre : les recrues peuvent être déplacées ou permutées, indépendamment de leur poste naturel.
+- Dès qu’une équipe est complète, les places restantes de l’adversaire sont remplies automatiquement à 1 € par recrue.
+- Les équipes sont présentées sur des terrains pour les comparer. Il n’y a pas de score automatique attribué aux compositions.
+
+### Défi Chrono
+
+- Chaque manche tire une cible commune de 3 à 10 secondes et mélange l’ordre des joueurs.
+- Chaque joueur démarre puis arrête son buzzer. Le mode difficile cache le compteur pendant l’essai.
+- Le classement additionne les écarts absolus : le plus petit total gagne après 1 à 5 manches.
+- Un essai passé ou expiré après 30 secondes ajoute 30 secondes d’écart.
+
+</details>
+
+## Stack
+
+| Partie | Technologies |
+| --- | --- |
+| Interface | React, Vite, JavaScript, Tailwind CSS, composants shadcn/ui et Lucide |
+| Serveur | Node.js, Express, Socket.io |
+| Données | Catalogues JSON côté serveur ; rooms et sessions en mémoire |
+| Tests | Test runner natif Node.js et clients Socket.io |
+| Déploiement | Frontend Vercel ; backend Railway avec Docker |
+
+## Architecture
+
+```text
+client/src/
+├── App.jsx                 # Navigation et liaison avec la session
+├── hooks/useRoom.js        # Socket.io, requêtes et reconnexion
+├── components/             # Accueil, lobby et composants communs
+│   ├── home/               # Catalogue des jeux, création et connexion
+│   └── ui/                 # Primitives d’interface
+└── games/
+    ├── undercover/         # Tableau, carte secrète, votes et résultats
+    ├── football/           # Terrains, enchères, budgets et placement
+    └── chrono/             # Compteur, buzzer et classement
+
+server/
+├── scripts/                # Import du catalogue football
+├── test/                   # Tests des règles et échanges réseau
+└── src/
+    ├── app.js              # Express et endpoint de santé
+    ├── index.js            # Démarrage HTTP / Socket.io
+    ├── socket/             # Événements et diffusion
+    ├── rooms/              # Rooms, hôte, sessions et reconnexion
+    ├── players/            # Identité et validation des pseudos
+    └── games/              # Registre et règles propres à chaque jeu
 ```
 
-Dans deux terminaux distincts :
+**Une séparation par responsabilité.** Les composants affichent l’état et transmettent les actions. Le hook `useRoom` centralise les échanges réseau. Les modules serveur valident les actions et calculent les transitions de jeu.
+
+**Des rooms indépendantes des jeux.** Création, code d’invitation, présence et droits de l’hôte sont communs. Chaque module expose ses paramètres, son état public et ses actions ; Undercover possède aussi une projection privée limitée au mot du joueur.
+
+**Des secrets conservés sur le serveur.** L’état complet n’est jamais diffusé tel quel. Les rôles Undercover restent côté serveur jusqu’à la révélation finale, y compris lors d’une reconnexion.
+
+**Une reprise de session.** Un jeton privé conservé dans `sessionStorage` permet de retrouver sa place dans le même onglet. Une coupure détectée met la partie en pause et réserve la place 60 secondes. Un départ volontaire ou une expiration ramène le groupe au lobby.
+
+## Installation
+
+Prérequis : **Node.js 22.x** et npm. Exécuter les commandes depuis la racine du dépôt.
+
+```sh
+npm ci
+```
+
+Démarrer le backend dans un terminal :
 
 ```sh
 npm run dev:server
 ```
 
+Démarrer le frontend dans un second terminal :
+
 ```sh
 npm run dev:client
 ```
 
-Le client est accessible sur http://localhost:5173 et le serveur sur http://localhost:3001. Vite relaie `/api` et `/socket.io` vers le serveur, y compris les connexions WebSocket.
-Le port du serveur peut être changé avec `PORT` ; adapter alors les cibles du proxy dans `client/vite.config.js`.
+Ouvrir **http://localhost:5173**. Le backend écoute par défaut sur le port **3001** ; le proxy Vite relaie les appels API et Socket.io.
 
-## Structure
+Aucune clé d’API ni base de données n’est nécessaire pour jouer avec les catalogues présents dans le dépôt. En local, laisser `VITE_SERVER_URL` absent ou vide pour utiliser le proxy. Les fichiers `.env.example` documentent la configuration ; ils ne sont pas chargés comme des fichiers `.env`.
 
-```text
-client/
-  index.html
-  vite.config.js
-  src/
-    main.jsx                  # Entrée React
-    App.jsx                   # Accueil, lobby ou partie selon la session
-    components/               # Formulaire d'accueil et lobby
-    games/undercover/         # Paramètres et carte privée
-    hooks/useRoom.js          # Connexion Socket.io et état de session
-    styles.css
-server/
-  src/
-    index.js                  # Serveur HTTP + Socket.io
-    app.js                    # Application Express, GET /api/health
-    socket/index.js           # Connexions temps réel
-    rooms/                    # Gestion générique des rooms en mémoire
-    players/                  # Création et validation des joueurs
-    games/
-      index.js                # Registre des modules de jeux
-      undercover/
-        index.js              # Validation, filtrage et attribution
-        data/words.json       # Paires disponibles côté serveur uniquement
-```
+### Jouer sur le réseau local
 
-Les rooms et joueurs resteront indépendants des règles de jeu. Leur état sera conservé en mémoire côté serveur et perdu au redémarrage. Les données statiques des jeux seront des fichiers JSON côté serveur. Les informations secrètes devront rester séparées de l'état public diffusé aux rooms.
-
-## Vérification et build
+Remplacer le lancement du frontend par :
 
 ```sh
-curl http://localhost:3001/api/health
-npm run build
+npm run dev:lan
 ```
 
-`npm run build` produit le client dans `client/dist`. `npm run start:server` démarre le serveur sans surveillance des fichiers. Le service du client en production et son proxy restent à configurer lors d'une étape dédiée.
+Ouvrir l’adresse **Network** affichée par Vite depuis les appareils connectés au même réseau Wi-Fi. Garder le serveur et le client en cours d’exécution. La copie du code peut être indisponible en HTTP local ; le code reste sélectionnable.
 
-## Rooms et lobby
-
-L'accueil permet de créer une room ou de la rejoindre avec un code de 6 caractères et un pseudo de 2 à 24 caractères. Les pseudos doivent être distincts dans une même room (sans distinction de casse).
-
-Le lobby affiche en temps réel les joueurs et l'hôte. Au départ de l'hôte, le premier joueur restant prend sa place. Les rooms vides sont supprimées. Une déconnexion ou un rafraîchissement réserve la place 60 secondes et déclenche une reconnexion automatique dans le même onglet. Après expiration, le joueur est retiré ; une room vide est supprimée.
-
-Événements Socket.io : `room:create` et `room:join` reçoivent `{ nickname, code? }` et répondent par acknowledgement `{ ok, room, playerId }` ou `{ ok: false, error }`. `room:leave` répond `{ ok: true }`. `room:updated` diffuse l'état public aux membres de la room uniquement.
-
-## Lancer Undercover
-
-L'hôte choisit le nombre d'Undercover, les catégories et la difficulté. Ces paramètres sont synchronisés avec tous les joueurs. Il faut au moins 3 joueurs, au moins un intrus et une majorité stricte de Civils face aux Undercover.
-
-Le bouton « Lancer Undercover » attribue aléatoirement les rôles. Chaque joueur peut révéler puis masquer sa carte privée (rôle et mot). La carte se masque aussi lorsque l'onglet perd le focus. La première sélection de paires Animaux/Nourriture suit la [référence fournie](https://undercover.gg/fr/words) et reste exclusivement dans le JSON serveur.
-
-`room:settings` reçoit les paramètres complets. `room:start` et `room:reset` sont réservés à l'hôte, comme les paramètres. Ces actions répondent `{ ok: true }` ou `{ ok: false, error }`. L'état public `room:updated` inclut le statut, les paramètres et l'identifiant de partie, les attributions restent privées jusqu’à la fin de partie. `game:private` envoie uniquement `{ gameSessionId, role, word }` à la connexion du joueur concerné.
-
-Une partie commencée n'accepte plus de nouveaux joueurs. L'hôte peut revenir au lobby. Un départ volontaire ou une reconnexion expirée annule la partie et ramène le groupe au lobby. Une courte coupure met uniquement la partie en pause.
-
-## Tester le lobby
+## Vérification
 
 ```sh
 npm run test --workspace server
+npm run build
 ```
 
-Les tests couvrent validation, appartenance unique, transfert d'hôte, suppression des rooms vides et échanges réels Socket.io (polling et WebSocket).
+Les tests couvrent les rooms, les autorisations, les règles des trois jeux, les reconnexions, le filtrage des données et la confidentialité des échanges Socket.io. Certains ouvrent un port local.
 
-Ils vérifient également les paramètres, le filtrage des mots, la répartition des rôles, les droits de l'hôte, le refus d'un double lancement et l'absence de secrets dans les événements publics ou vers les connexions extérieures à la room.
+Le build génère `client/dist`. Il ne remplace pas une validation de l’interface : avant une démonstration, tester une partie de chaque jeu sur plusieurs appareils, un rafraîchissement et un retour au lobby.
 
-Pour vérifier les écrans, ouvrir deux onglets sur http://localhost:5173 : créer une room dans le premier, rejoindre avec un autre pseudo dans le second, puis quitter depuis le premier. Le second joueur doit devenir hôte. Quitter le dernier onglet supprime la room ; rejoindre son ancien code doit échouer.
+## Données
 
-Pour vérifier le lancement, rejoindre une même room dans 3 onglets avec des pseudos différents. Depuis l'hôte, lancer avec les paramètres par défaut, puis révéler chaque carte : 2 Civils partagent un mot, 1 Undercover reçoit le mot voisin. Avec 5 joueurs, on peut choisir 2 Undercover.
+Les catalogues sont chargés côté serveur. Leur consultation pendant une partie ne nécessite pas d’appel à une API de données externe.
 
-## Tester avec plusieurs appareils sur le même Wi-Fi
+<details>
+<summary><strong>Ajouter des paires Undercover</strong></summary>
 
-Démarrer le serveur avec `npm run dev:server`, puis exposer le client au réseau local :
+Les paires sont dans `server/src/games/undercover/data/words.json` et `anime.json`. Le fichier `catalog.js` les rassemble.
+
+Chaque paire possède :
+
+| Champ | Usage |
+| --- | --- |
+| `id` | Identifiant stable et unique |
+| `word1`, `word2` | Les deux mots associés |
+| `themes` | Au moins un de ces thèmes doit être sélectionné |
+| `requiredThemes` | Tous ces thèmes doivent être sélectionnés |
+| `requiredUniverses` | Tous ces univers doivent être sélectionnés |
+| `crossover` | Si vrai, nécessite l’option crossovers |
+| `types` | Types des deux mots, facultatifs |
+| `link` | Explication éditoriale de l’association, conservée côté serveur |
+
+Exemple : **Ryuk / Pomme** peut relever des thèmes Anime et Nourriture, mais exige Anime et Death Note. Sélectionner seulement Nourriture ne suffit donc pas.
+
+Utiliser les identifiants de thèmes et d’univers déjà présents dans les fichiers. Pour créer un nouveau catalogue, l’ajouter à la liste chargée par `catalog.js`. Relancer le serveur et les tests après modification.
+
+</details>
+
+<details>
+<summary><strong>Importer les données et photos du Mercato</strong></summary>
+
+Le catalogue est dans `server/src/games/football/data/players.json`. Un script enrichit les profils existants à partir de TheSportsDB :
 
 ```sh
-npm run dev --workspace client -- --host 0.0.0.0
+# Simulation, sans écriture du catalogue
+npm run data:football
+
+# Import et enregistrement
+npm run data:football -- --write
 ```
 
-Vite affiche une adresse `Network` (par exemple `http://192.168.1.20:5173`). Ouvrir cette adresse depuis les téléphones ou ordinateurs connectés au même Wi-Fi. Garder les deux terminaux ouverts. Le proxy Vite relaie aussi Socket.io : aucun changement d'URL dans le client n'est nécessaire.
+L’import conserve les identifiants et postes de jeu. Les homonymes et correspondances ambiguës nécessitent une vérification ; le rapport figure dans `server/src/games/football/data/import-report.json`.
 
-Créer une room sur un appareil, partager son code, puis rejoindre avec deux autres joueurs. Vérifier la liste synchronisée, les droits de l'hôte et la distribution (avec les paramètres par défaut : deux Civils et un Undercover). Un rafraîchissement restaure automatiquement la session ; une coupure détectée met la partie en pause pendant au maximum 60 secondes.
+Une clé personnelle peut être fournie via `THESPORTSDB_API_KEY`. Les photos restent des liens externes : le script ne les télécharge pas et leur disponibilité dépend de la source. Les requêtes d’images sont distinctes des appels à l’API d’import.
 
-Si l'adresse ne répond pas, vérifier que le pare-feu autorise Node sur le réseau local et que les appareils ne sont pas sur un Wi-Fi invité isolé. Sur cette adresse HTTP locale, la copie automatique peut être indisponible : saisir le code manuellement. Pour des amis sur d'autres réseaux, il faudra une URL publique via un hébergement ou un tunnel.
+Ne pas lancer cet import à chaque room ni au déploiement. Relancer le serveur après une modification du catalogue.
 
-## Partie, manches et tours
+</details>
 
-Une partie contient **1 à 5 manches**. Chaque manche redistribue les rôles et les mots et remet tous les joueurs en jeu. Elle contient au maximum **1 à 5 tours**. Un tour comprend une phase d'indices suivie d'un vote.
+## Déploiement
 
-Temps par joueur pour son indice, puis durée du vote : **10, 20, 30, 40 ou 60 secondes, ou Illimité**. En mode illimité, aucun délai ne fait avancer la phase : tous les joueurs vivants doivent envoyer leur indice puis voter. Réglages par défaut : **3 manches, 30 secondes par phase**. Disponibles dès la création et modifiables par l'hôte au lobby.
+Le dépôt contient `vercel.json`, `railway.json` et un `Dockerfile`. Les deux services utilisent **la racine du dépôt**.
 
-Chaque joueur vivant envoie un indice de 1 à 120 caractères par tour dans le tchat. Les indices sont envoyés chacun son tour. Après le dernier joueur, le vote collectif commence. Un seul vote par joueur vivant contre un autre joueur vivant. Les cibles restent privées jusqu'au décompte. Tous les votes reçus ou le délai écoulé déclenchent l'élimination du joueur ayant le plus de voix ; une égalité ou l'absence de votes n'élimine personne.
+| Service | Configuration |
+| --- | --- |
+| **Vercel — frontend** | Build `npm run build`, sortie `client/dist`, variable `VITE_SERVER_URL` = URL HTTPS publique du backend |
+| **Railway — backend** | Dockerfile, démarrage `npm start`, une seule réplique, variable `CLIENT_ORIGINS` = URL HTTPS stable du frontend |
 
-Les Civils gagnent la manche en éliminant tous les Undercover. Les Undercover gagnent à parité avec les Civils. Une victoire Civil donne **2 points** à chaque Civil, une victoire Undercover **3 points** à chaque Undercover, même éliminé ; une défaite donne 0 point. Le serveur attribue les points une seule fois à la fin de chaque manche.
+Le serveur écoute sur `0.0.0.0` et utilise `PORT` fourni par l’environnement. Le port cible du domaine Railway doit correspondre au port réellement écouté.
 
-À chaque fin de manche, les cartes sont révélées et le classement provisoire est affiché. L'hôte lance la manche suivante avec de nouvelles attributions privées, tous les joueurs en jeu, un tchat et des votes vides, et les scores conservés. Après la dernière manche, le classement final désigne le ou les joueurs ayant le plus de points (ex æquo possibles). Rejouer revient au lobby et remet les scores à zéro au prochain lancement.
+Le endpoint `GET /api/health` retourne l’état du backend. Sa racine peut retourner 404 : le frontend est servi séparément.
 
-Le serveur contrôle les délais, identités, droits et victoires. Les commandes game:clue et game:vote portent gameSessionId et turn, plus text ou targetId. Une nouvelle manche reçoit un nouvel identifiant : les anciennes actions sont refusées. room:next est réservé à l'hôte et disponible seulement entre deux manches. Un départ volontaire ou une coupure de plus de 60 secondes annule la partie et ramène la room au lobby.
+`CLIENT_ORIGINS` accepte plusieurs origines séparées par des virgules et configure CORS ; ce n’est pas un mécanisme d’authentification. `VITE_SERVER_URL` est publique et intégrée au build : un changement nécessite de reconstruire le frontend. Saisir les variables dans les plateformes d’hébergement.
 
-Tests sans port réseau : node --test server/test/rounds.test.js. Pour un essai rapide : 3 joueurs, 2 manches, 1 tour et 10 secondes par phase. Vérifier le score après chaque manche, la remise en jeu et le classement final.
+## Limites du MVP et prochaines étapes
 
-## Reconnexion
+- **Pas de persistance** : un redémarrage ou déploiement du serveur efface les rooms. L’architecture actuelle prévoit une seule instance serveur.
+- **Chrono entre amis** : la durée est mesurée dans le navigateur puis validée par le serveur ; un client modifié peut tricher.
+- **Validation frontend à compléter** : pas encore de suite de tests automatisés des parcours navigateur ni de script de lint.
+- **Catalogues à enrichir** : certaines photos peuvent manquer ; l’équilibrage des paires et la prévention des répétitions restent à améliorer.
+- **UX à alléger** : réduire les textes en jeu et regrouper les explications dans une aide accessible à la demande.
 
-Un jeton privé opaque est envoyé uniquement au joueur lors de la création ou de l'arrivée. Le client le conserve dans sessionStorage, propre à l'onglet et à l'adresse du site. À la reconnexion, room:resume restaure la même identité, l'hôte, les scores, indices, votes et la carte privée. Le jeton n'apparaît jamais dans un snapshot public. La reprise remplace l'ancienne connexion, qui perd ses droits.
-
-Une coupure détectée réserve la place 60 secondes. La room est en pause tant qu'un joueur est absent : aucun indice, vote ou lancement n'est autorisé. L'échéance est prolongée de la durée totale de pause après le dernier retour. Le mode illimité reste sans échéance. Le joueur est affiché comme « Reconnexion… ».
-
-Quitter volontairement invalide immédiatement la session. Une expiration retire le joueur, transfère l'hôte si nécessaire et annule la partie en cours. Un redémarrage du serveur efface toutes les sessions (MVP sans BDD). Une nouvelle adresse ou un autre navigateur ne partage pas la session ; il faut revenir sur la même adresse dans le même onglet. Si le stockage du navigateur est désactivé, une reconnexion sans rafraîchissement fonctionne, mais la reprise après rechargement n'est pas garantie.
-
-Test manuel : lancer avec 3 joueurs, envoyer un indice et rafraîchir le même onglet. Vérifier la même carte et le même indice. Couper brièvement le Wi-Fi d'un joueur : les autres doivent voir la pause, puis la reprise. Tester aussi une absence supérieure à 60 secondes et un départ volontaire. Tests sans port : node --test server/test/reconnection.test.js server/test/rounds.test.js.
-
-### Ordre des indices
-
-Le serveur mélange les joueurs indépendamment des rôles à chaque nouvelle manche. Cet ordre reste identique entre les tours de la manche, en sautant les éliminés. Le tirage peut désigner à nouveau le même premier joueur. Seul le joueur désigné peut envoyer un indice. Le délai configuré s’applique à chaque joueur individuellement : un envoi ou une expiration passe au suivant. En mode illimité, seul l’envoi fait avancer. Après le dernier joueur, tous les survivants votent simultanément avec un délai collectif. La reconnexion conserve le joueur attendu et le temps restant.
-
-## Interface
-
-Accueil, lobby et partie partagent une direction bleu nuit/violet avec accents verts pour la présence. Les composants shadcn sont conservés dans client/src/components/ui, avec icônes Lucide et classes Tailwind. components.json et jsconfig.json configurent les composants JavaScript et l’alias @. Les variables du thème sont centralisées dans client/src/styles.css.
-
-L’accueil propose les onglets Créer/Rejoindre. Le lobby sépare joueurs et paramètres sur grand écran et les empile sur mobile. La partie met en avant le joueur attendu, la carte privée, les indices, le vote et les résultats. Les actions et règles du serveur restent indépendantes de la présentation.
-
-## Duel de foot
-
-Choisir « Duel de foot » dans le formulaire de création. Deux participants maximum, 250 € fictifs chacun, 6 emplacements : GB, DC, MC, ATT, Joker et Coach. Le catalogue serveur contient 24 anciens joueurs et 5 entraîneurs, sans doublon de personne ; photoUrl est réservé aux images futures. Les postes servent au jeu et ne constituent pas un historique complet des positions jouées.
-
-Le premier inscrit ouvre la première enchère ; l’ouverture alterne ensuite A/B, indépendamment du vainqueur. Mise entière à partir de 1 €, augmentation minimale de 1 €. Le premier doit miser ; ensuite on peut surenchérir ou abandonner. Le gagnant paie sa dernière mise. Le serveur impose une réserve de 1 € par emplacement encore à remplir. Tous les profils peuvent remplir les six emplacements. Le poste naturel sert uniquement au placement initial : le propriétaire peut ensuite déplacer ou permuter ses recrues via les sélecteurs sous son terrain, pendant et après les enchères. Un coach peut jouer au milieu et un joueur occuper la touche. Tant que les deux équipes sont incomplètes, une recrue compatible avec une seule équipe lui est proposée à 1 € : Recruter ou Passer. Passer remet la recrue en fin de sélection sans débiter le budget. Dès qu’une équipe est complète, le serveur complète automatiquement l’autre avec des recrues compatibles à 1 € chacune. Un joueur sans emplacement compatible est sauté.
-
-Les deux équipes complètes sont affichées sur leurs terrains, côte à côte sur grand écran et empilées sur mobile. Pas de score automatique. Rejouer revient au lobby. Les règles de pause/reconnexion communes s’appliquent.
-
-Module : server/src/games/football. Interface : client/src/games/football. room:create accepte gameId ; game:bid et game:pass portent gameSessionId et auction, plus amount pour une mise. La file des prochaines recrues reste sur le serveur. Tests : node --test server/test/football.test.js.
-
-Les raccourcis ¼, ½, ¾ et Max remplissent la mise à partir du maximum autorisé (budget moins 1 € par poste restant après achat), avec arrondi inférieur. Une confirmation est toujours nécessaire. Un raccourci ne permettant pas de surenchérir est désactivé.
-
-## Défi Chrono et sélection des modes
-
-L'accueil affiche trois cartes « À l'affiche » : Undercover, Mercato et Défi Chrono. La carte sélectionne le jeu du formulaire Créer/Rejoindre. Le code de room détermine automatiquement le jeu à rejoindre, indépendamment de la carte sélectionnée. Une session existante continue de se restaurer automatiquement.
-
-Chrono : au moins 2 joueurs, 1 à 5 manches (3 par défaut). Chaque manche mélange l'ordre et tire une cible commune de 3 à 10 secondes. À son tour, le joueur démarre puis arrête son buzzer. Le mode difficile masque le compteur pendant la mesure. Le classement cumule les écarts absolus en millisecondes ; le total le plus faible gagne, avec ex æquo possibles.
-
-La mesure utilise performance.now dans le navigateur, après confirmation du démarrage par le serveur. Le serveur valide le tour, les bornes de durée et compte les résultats ; cette approche entre amis n'est pas une protection complète contre un client modifié. Un essai expiré (30 secondes) ou passé ajoute 30 secondes d'écart. Après une coupure/actualisation pendant la mesure, la session revient mais la mesure locale est perdue : passer l'essai ou attendre son expiration. Aucun temps partiel n'est affiché aux adversaires.
-
-Module serveur : server/src/games/chrono. Interface : client/src/games/chrono. Événements game:begin, game:stop et game:forfeit avec gameSessionId et round ; stop ajoute elapsedMs. Tests sans réseau : node --test server/test/chrono.test.js.
-
-À reprendre ensuite : catalogue partagé pour les jeux, imports de données et photos depuis des sources externes, puis API PartyRoom. Aucun import externe de catalogue n'a été ajouté à cette étape.
-
-### Import du catalogue football
-
-`npm run data:football` simule l’import TheSportsDB ; `npm run data:football -- --write` enrichit le catalogue existant. Node suffit, aucune BDD ni dépendance supplémentaire. L’import conserve les noms, identifiants et postes de jeu (Zidane reste MC dans sa version joueur et Coach dans sa version entraîneur). Les portraits, détourées, nationalités et dates de naissance sont récupérés lorsqu’ils existent. `photoUrl` privilégie la détourée.
-
-Le rapport `server/src/games/football/data/import-report.json` liste les correspondances, les cas à vérifier et les erreurs. Les noms ambigus ne sont pas associés automatiquement. Après vérification de l’identité, renseigner `source.id` avec l’identifiant TheSportsDB permet les imports suivants par identifiant. Une erreur réseau conserve le profil existant. Le script attend 2,2 secondes entre les appels et utilise la clé publique 123 ; une clé personnelle peut être fournie via `THESPORTSDB_API_KEY`.
-
-Les images restent des liens externes ; elles ne sont pas téléchargées par ce script. La source et la date d’import sont conservées sur chaque profil. Source : [TheSportsDB](https://www.thesportsdb.com), [documentation](https://www.thesportsdb.com/documentation), [conditions d’utilisation des données et images](https://www.thesportsdb.com/docs_terms_of_use.php). La présence d’un lien ne garantit pas la disponibilité de l’image. L’import est manuel : aucune requête à l’API n’est nécessaire pendant une partie. Redémarrer le serveur après un import pour recharger le catalogue.
-
-### Déploiement : Vercel (frontend) + Railway (backend)
-
-Les deux services utilisent le même dépôt, avec la racine du dépôt comme Root Directory.
-
-1. Railway : connecter GitHub. Le Dockerfile installe seulement les dépendances serveur ; aucun build React. Supprimer les anciens overrides de Build Command. railway.json configure le démarrage et /api/health. NODE_ENV=production est déjà défini dans Docker. Garder une seule réplique et laisser Railway fournir PORT.
-2. Railway > Networking : générer le domaine HTTPS public. Vérifier https://ADRESSE-RAILWAY/api/health. La racine du backend retourne normalement 404 : elle ne sert plus le frontend.
-3. Vercel : importer le même dépôt, Root Directory à la racine. vercel.json configure npm ci --include=dev, npm run build et client/dist. Ajouter VITE_SERVER_URL=https://ADRESSE-RAILWAY avant de déployer (sans /socket.io).
-4. Copier le domaine stable de production Vercel. Railway > Variables : CLIENT_ORIGINS=https://ADRESSE-VERCEL. Redéployer Railway. Plusieurs origines explicites peuvent être séparées par des virgules ; ne pas ajouter toutes les previews via un joker.
-5. Ouvrir l’URL Vercel : vérifier En ligne, créer une room et la rejoindre depuis un second appareil ; lancer une partie.
-
-VITE_SERVER_URL est une adresse publique incluse dans le build, pas un secret. Modifier cette variable nécessite un nouveau déploiement Vercel. CLIENT_ORIGINS configure CORS côté Socket.io ; ce n’est pas une authentification. Les fichiers .env.example sont des exemples, les vraies valeurs se saisissent dans les plateformes. En local, laisser VITE_SERVER_URL vide : le proxy Vite existant continue de fonctionner.
-
-Les rooms restent en mémoire : redémarrage, veille ou déploiement les efface. L’offre gratuite Railway dépend des crédits disponibles. Ne pas lancer l’import football au déploiement ; les catalogues JSON sont déjà dans Git.
-
-Undercover : deux tours d’indices précèdent le premier vote. Après une égalité (ou aucun vote), un nouveau tour d’indices puis un vote sont proposés jusqu’à une élimination. Après une élimination sans victoire, un seul tour précède le vote suivant. Il n’y a plus de limite de tours.
+Les prochains travaux privilégient la fiabilité des parcours et la qualité des données avant l’ajout d’un quatrième jeu.
